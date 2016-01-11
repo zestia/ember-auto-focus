@@ -2,9 +2,9 @@
 
 ![Ember Observer score](http://emberobserver.com/badges/ember-cli-autofocus.svg)
 
-The `autofocus` attribute of HTML focuses an element on page load.
+The `autofocus` attribute of HTML focuses an element on _page load_.
 
-However, in single page apps page load only happens once so `autofocus` pretty much becomes useless.
+However, in single page apps the page load event only happens once - so `autofocus` pretty much becomes useless.
 
 This add allows you to focus an area of your application
 
