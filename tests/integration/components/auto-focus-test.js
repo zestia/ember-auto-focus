@@ -12,7 +12,7 @@ test('it renders', function(assert) {
   this.render(hbs `{{auto-focus}}`);
 
   assert.equal(this.$('span').length, 1,
-    'renders as an inline element');
+    'renders as an inline element (ideally there would be no element)');
 });
 
 
