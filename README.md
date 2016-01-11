@@ -1,5 +1,7 @@
 # ember-cli-autofocus
 
+![Ember Observer score](http://emberobserver.com/badges/ember-cli-autofocus.svg)
+
 The `autofocus` attribute of HTML focuses an element on page load.
 
 However, in single page apps page load only happens once so `autofocus` pretty much becomes useless.
