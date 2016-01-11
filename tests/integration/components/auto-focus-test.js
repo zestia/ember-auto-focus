@@ -6,6 +6,15 @@ moduleForComponent('auto-focus', {
   integration: true
 });
 
+test('it renders', function(assert) {
+  assert.expect(1);
+
+  this.render(hbs `{{auto-focus}}`);
+
+  assert.equal(this.$('span').length, 1,
+    'renders as an inline element');
+});
+
 
 test('it focuses the first child', function(assert) {
   assert.expect(3);

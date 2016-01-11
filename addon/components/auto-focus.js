@@ -2,7 +2,7 @@ import Component from 'ember-component';
 import { scheduleOnce } from 'ember-runloop';
 
 export default Component.extend({
-  //tagName: '',
+  tagName: 'span',
 
   didInsertElement() {
     this._super(...arguments);
