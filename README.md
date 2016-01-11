@@ -1,6 +1,20 @@
-# Ember-cli-autofocus
+# ember-cli-autofocus
 
-This README outlines the details of collaborating on this Ember addon.
+The `autofocus` attribute of HTML focuses an element on page load.
+
+However, in single page apps page load only happens once so `autofocus` pretty much becomes useless.
+
+This add allows you to focus an area of your application
+
+## Example
+
+```handlebars
+{{#auto-focus}}
+  <input>
+{{/auto-focus}}
+```
+
+Optionally, you can set the `disabled` attribute to true to prevent autofocusing.
 
 ## Installation
 

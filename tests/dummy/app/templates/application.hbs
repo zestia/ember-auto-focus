@@ -1,3 +1,11 @@
-<h2 id="title">Welcome to Ember</h2>
+<h1>ember-cli-autofocus</h1>
 
-{{outlet}}
+{{#if show}}
+  {{#auto-focus}}
+    <input>
+  {{/auto-focus}}
+{{/if}}
+
+<br><br>
+
+<button onclick={{action 'toggle'}}>Toggle</button>
