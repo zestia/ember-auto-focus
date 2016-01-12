@@ -11,9 +11,11 @@ This addon provides you with a helper that focuses the first child contained wit
 ## Example
 
 ```handlebars
-{{#auto-focus}}
-  <input>
-{{/auto-focus}}
+{{#if showField}}
+  {{#auto-focus}}
+	  <input>
+  {{/auto-focus}}
+{{/if}}
 ```
 
 Optionally, you can set the `disabled` attribute to true to prevent autofocusing.
