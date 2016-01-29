@@ -1,6 +1,6 @@
 # ember-cli-autofocus
 
-<a href="http://emberobserver.com/addons/ember-cli-autofocus"><img src="http://emberobserver.com/badges/ember-cli-autofocus.svg"></a>
+<a href="http://emberobserver.com/addons/ember-cli-autofocus"><img src="http://emberobserver.com/badges/ember-cli-autofocus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-cli-autofocus#badge-embed"><img src="https://david-dm.org/amk221/ember-cli-autofocus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-cli-autofocus#dev-badge-embed"><img src="https://david-dm.org/amk221/ember-cli-autofocus/dev-status.svg"></a>
 
 HTML's `autofocus` attribute focuses an element on _page load_.
 

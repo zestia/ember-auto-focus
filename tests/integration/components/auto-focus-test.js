@@ -30,7 +30,7 @@ test('it focuses the first child', function(assert) {
   `);
 
   next(() => {
-    assert.ok(this.$('.foo').is(':focus'),
+    assert.ok(document.activeElement === this.$('.foo').get(0),
       'first child is focused on initial render');
   });
 
@@ -42,7 +42,7 @@ test('it focuses the first child', function(assert) {
 
   next(() => {
     this.set('show', true);
-    assert.ok(this.$('.foo').is(':focus'),
+    assert.ok(document.activeElement === this.$('.foo').get(0),
       'first child is focused on subsequent renders');
   });
 });
