@@ -13,7 +13,7 @@ This addon provides you with a helper that focuses the first child contained wit
 ```handlebars
 {{#if showField}}
   {{#auto-focus}}
-	  <input>
+    <input>
   {{/auto-focus}}
 {{/if}}
 ```
