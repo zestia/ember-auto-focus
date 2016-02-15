@@ -1,1 +1,1 @@
-export { default } from 'ember-cli-autofocus/components/auto-focus';
+export { default } from 'ember-autofocus/components/auto-focus';

@@ -1,6 +1,6 @@
-# ember-cli-autofocus
+# ember-autofocus
 
-<a href="http://emberobserver.com/addons/ember-cli-autofocus"><img src="http://emberobserver.com/badges/ember-cli-autofocus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-cli-autofocus#badge-embed"><img src="https://david-dm.org/amk221/ember-cli-autofocus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-cli-autofocus#dev-badge-embed"><img src="https://david-dm.org/amk221/ember-cli-autofocus/dev-status.svg"></a> &nbsp; <a href="https://codeclimate.com/github/amk221/ember-cli-autofocus"><img src="https://codeclimate.com/github/amk221/ember-cli-autofocus/badges/gpa.svg" /></a> &nbsp; <a href="http://travis-ci.org/amk221/ember-cli-autofocus"><img src="https://travis-ci.org/amk221/ember-cli-autofocus.svg?branch=master"></a>
+<a href="http://emberobserver.com/addons/ember-autofocus"><img src="http://emberobserver.com/badges/ember-autofocus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-autofocus#badge-embed"><img src="https://david-dm.org/amk221/ember-autofocus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-autofocus#dev-badge-embed"><img src="https://david-dm.org/amk221/ember-autofocus/dev-status.svg"></a> &nbsp; <a href="https://codeclimate.com/github/amk221/ember-autofocus"><img src="https://codeclimate.com/github/amk221/ember-autofocus/badges/gpa.svg" /></a> &nbsp; <a href="http://travis-ci.org/amk221/ember-autofocus"><img src="https://travis-ci.org/amk221/ember-autofocus.svg?branch=master"></a>
 
 HTML's `autofocus` attribute focuses an element on _page load_.
 
