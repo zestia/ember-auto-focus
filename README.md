@@ -1,6 +1,6 @@
-# ember-autofocus
+# ember-auto-focus
 
-<a href="http://emberobserver.com/addons/ember-autofocus"><img src="http://emberobserver.com/badges/ember-autofocus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-autofocus#badge-embed"><img src="https://david-dm.org/amk221/ember-autofocus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-autofocus#dev-badge-embed"><img src="https://david-dm.org/amk221/ember-autofocus/dev-status.svg"></a> &nbsp; <a href="https://codeclimate.com/github/amk221/ember-autofocus"><img src="https://codeclimate.com/github/amk221/ember-autofocus/badges/gpa.svg" /></a> &nbsp; <a href="http://travis-ci.org/amk221/ember-autofocus"><img src="https://travis-ci.org/amk221/ember-autofocus.svg?branch=master"></a>
+<a href="http://emberobserver.com/addons/ember-auto-focus"><img src="http://emberobserver.com/badges/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-auto-focus#badge-embed"><img src="https://david-dm.org/amk221/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/amk221/ember-auto-focus#dev-badge-embed"><img src="https://david-dm.org/amk221/ember-auto-focus/dev-status.svg"></a> &nbsp; <a href="https://codeclimate.com/github/amk221/ember-auto-focus"><img src="https://codeclimate.com/github/amk221/ember-auto-focus/badges/gpa.svg" /></a> &nbsp; <a href="http://travis-ci.org/amk221/ember-auto-focus"><img src="https://travis-ci.org/amk221/ember-auto-focus.svg?branch=master"></a>
 
 HTML's `autofocus` attribute focuses an element on _page load_.
 
@@ -22,5 +22,5 @@ Optionally, you can set the `disabled` attribute to true to prevent autofocusing
 
 ### Installation
 ```
-ember install @amk221/ember-autofocus
+ember install ember-auto-focus
 ```

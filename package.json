@@ -1,5 +1,5 @@
 {
-  "name": "@amk221/ember-autofocus",
+  "name": "ember-auto-focus",
   "version": "0.0.3",
   "description": "An HTML autofocus solution for Ember apps",
   "directories": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amk221/ember-autofocus.git"
+    "url": "https://github.com/amk221/ember-auto-focus.git"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -53,7 +53,7 @@
     "configPath": "tests/dummy/config"
   },
   "bugs": {
-    "url": "https://github.com/amk221/ember-autofocus/issues"
+    "url": "https://github.com/amk221/ember-auto-focus/issues"
   },
-  "homepage": "https://github.com/amk221/ember-autofocus"
+  "homepage": "https://github.com/amk221/ember-auto-focus"
 }

@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-autofocus'
+  name: 'ember-auto-focus'
 };
