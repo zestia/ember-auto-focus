@@ -1,7 +1,7 @@
 import Component from 'ember-component';
 import { scheduleOnce } from 'ember-runloop';
 
-export default Component.extend({
+const AutoFocusComponent = Component.extend({
   tagName: 'span',
 
   didInsertElement() {
@@ -10,8 +10,16 @@ export default Component.extend({
   },
 
   _autofocus() {
-    if (!this.getAttr('disabled')) {
-      this.$('>:first').focus();
+    if (this.getAttr('disabled')) {
+      return false;
     }
+    let selector = this.getAttr('selector') || '>:first';
+    this.$(selector).focus();
   }
 });
+
+AutoFocusComponent.reopenClass({
+  positionalParams: ['selector']
+});
+
+export default AutoFocusComponent;

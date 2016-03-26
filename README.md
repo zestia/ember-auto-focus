@@ -6,9 +6,9 @@ HTML's `autofocus` attribute focuses an element on _page load_.
 
 However, in single page apps the page load event only happens once - so `autofocus` pretty much becomes useless.
 
-This addon provides you with a helper that focuses the first child contained within it.
-
 ## Example
+
+When the auto-focus element is inserted, it will attempt to focus the first child contained within it:
 
 ```handlebars
 {{#if showField}}
@@ -17,8 +17,21 @@ This addon provides you with a helper that focuses the first child contained wit
   {{/auto-focus}}
 {{/if}}
 ```
+Alternatively, you can pass in a selector:
 
-Optionally, you can set the `disabled` attribute to true to prevent autofocusing.
+```handlebars
+{{#auto-focus '.my-child'}}
+  <div class="my-child" tabindex=0></div>
+{{/auto-focus}}
+```
+
+You can set the disabled attribute to true to prevent autofocusing:
+
+```handlebars
+{{#auto-focus disabled=shouldAutoFocus}}
+   ...
+{{/auto-focus}}
+```
 
 ### Installation
 ```

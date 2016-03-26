@@ -16,7 +16,7 @@ test('it renders', function(assert) {
 });
 
 
-test('it focuses the first child', function(assert) {
+test('it focuses the first child by default', function(assert) {
   assert.expect(3);
 
   this.set('show', true);
@@ -44,6 +44,43 @@ test('it focuses the first child', function(assert) {
     this.set('show', true);
     assert.ok(document.activeElement === this.$('.foo').get(0),
       'first child is focused on subsequent renders');
+  });
+});
+
+
+test('it can focus a specific child element', function(assert) {
+  assert.expect(1);
+
+  this.set('selector', '.outer > .inner > .foo');
+
+  this.render(hbs `
+    {{#auto-focus selector}}
+      <div class="outer">
+        <div class="inner">
+          <div class="foo" tabindex=0"></div>
+        </div>
+      </div>
+    {{/auto-focus}}
+  `);
+
+  next(() => {
+    assert.ok(document.activeElement === this.$(this.get('selector')).get(0),
+      'focuses the element specified by the selector');
+  });
+});
+
+
+test('it does not focus any old element', function(assert) {
+  assert.expect(1);
+
+  this.render(hbs `
+    <div class="focusable" tabindex=0></div>
+    {{#auto-focus '.focusable'}}{{/auto-focus}}
+  `);
+
+  next(() => {
+    assert.ok(document.activeElement !== this.$('.focusable').get(0),
+      'selector should be scoped to child elements only');
   });
 });
 
