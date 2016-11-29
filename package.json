@@ -9,7 +9,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:testall"
+    "test": "ember try:each"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
     "textarea"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.6"
+    "ember-cli-babel": "^5.1.10"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

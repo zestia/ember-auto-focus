@@ -20,6 +20,17 @@ module.exports = {
       }
     },
     {
+      name: 'ember-glimmer-1',
+      bower: {
+        dependencies: {
+          ember: '2.9.1'
+        },
+        resolutions: {
+          ember: '2.9.1'
+        }
+      }
+    },
+    {
       name: 'ember-release',
       bower: {
         dependencies: {
