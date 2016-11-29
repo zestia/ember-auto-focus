@@ -13,7 +13,7 @@ const AutoFocusComponent = Component.extend({
     if (this.getAttr('disabled')) {
       return false;
     }
-    let selector = this.getAttr('selector') || '>:first';
+    const selector = this.getAttr('selector') || '>:first';
     this.$(selector).focus();
   }
 });
