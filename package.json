@@ -1,6 +1,6 @@
 {
   "name": "ember-auto-focus",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An HTML autofocus solution for Ember apps",
   "directories": {
     "doc": "doc",
