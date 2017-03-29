@@ -27,12 +27,10 @@ matrix:
 before_install:
   - npm config set spin false
   - npm install -g bower phantomjs-prebuilt
-  - bower --version
   - phantomjs --version
 
 install:
   - npm install
-  - bower install
 
 script:
   # Usually, it's ok to finish the test scenario without reverting
