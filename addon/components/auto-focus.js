@@ -10,10 +10,10 @@ const AutoFocusComponent = Component.extend({
   },
 
   _autofocus() {
-    if (this.getAttr('disabled')) {
+    if (this.get('disabled')) {
       return false;
     }
-    const selector = this.getAttr('selector') || '>:first';
+    const selector = this.getWithDefault('selector', '>:first');
     this.$(selector).focus();
   }
 });
