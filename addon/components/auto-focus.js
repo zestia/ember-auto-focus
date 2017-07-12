@@ -1,5 +1,5 @@
-import Component from 'ember-component';
-import { scheduleOnce } from 'ember-runloop';
+import Component from '@ember/component';
+import { scheduleOnce } from '@ember/runloop';
 
 const AutoFocusComponent = Component.extend({
   tagName: 'span',

@@ -1,6 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-import { next } from 'ember-runloop';
+import { next } from '@ember/runloop';
 
 moduleForComponent('auto-focus', {
   integration: true
