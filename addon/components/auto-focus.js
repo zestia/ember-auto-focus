@@ -13,8 +13,13 @@ const AutoFocusComponent = Component.extend({
     if (this.get('disabled')) {
       return false;
     }
-    const selector = this.getWithDefault('selector', '>:first');
-    this.$(selector).focus();
+
+    const selector = this.getWithDefault('selector', ':first-child');
+    const child    = this.get('element').querySelector(selector);
+
+    if (child) {
+      child.focus();
+    }
   }
 });
 
