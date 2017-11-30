@@ -16,7 +16,7 @@
     "url": "https://github.com/amk221/ember-auto-focus.git"
   },
   "engines": {
-    "node": ">= 4"
+    "node": "^4.5 || 6.* || >= 7.*"
   },
   "author": "Andrew Kirwin",
   "license": "MIT",
