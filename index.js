@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-auto-focus'
+  name: '@zestia/ember-auto-focus'
 };

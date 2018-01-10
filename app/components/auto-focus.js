@@ -1,1 +1,1 @@
-export { default } from 'ember-auto-focus/components/auto-focus';
+export { default } from '@zestia/ember-auto-focus/components/auto-focus';

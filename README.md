@@ -1,4 +1,4 @@
-# ember-auto-focus
+# @zestia/ember-auto-focus
 
 <a href="http://emberobserver.com/addons/ember-auto-focus"><img src="http://emberobserver.com/badges/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#dev-badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus/dev-status.svg"></a> &nbsp; <a href="http://travis-ci.org/zestia/ember-auto-focus"><img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=master"></a>
 
@@ -35,5 +35,5 @@ You can set the disabled attribute to true to prevent autofocusing:
 
 ### Installation
 ```
-ember install ember-auto-focus
+ember install @zestia/ember-auto-focus
 ```
