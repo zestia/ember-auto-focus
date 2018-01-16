@@ -20,7 +20,7 @@ When the auto-focus element is inserted, it will attempt to focus the first chil
 Alternatively, you can pass in a selector:
 
 ```handlebars
-{{#auto-focus '.my-child'}}
+{{#auto-focus ".my-child"}}
   <div class="my-child" tabindex=0></div>
 {{/auto-focus}}
 ```
