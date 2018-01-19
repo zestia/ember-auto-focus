@@ -1,3 +1,7 @@
+/* eslint-disable quote-props */
+
+'use strict';
+
 module.exports = {
   useYarn: true,
   scenarios: [
