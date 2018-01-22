@@ -26,7 +26,7 @@
     "@zestia/eslint-config": "1.0.11",
     "@zestia/stylelint-config": "1.0.2",
     "broccoli-asset-rev": "2.6.0",
-    "ember-cli": "2.18.0",
+    "ember-cli": "2.18.1",
     "ember-cli-dependency-checker": "2.1.0",
     "ember-cli-eslint": "4.2.3",
     "ember-cli-github-pages": "0.1.3",
