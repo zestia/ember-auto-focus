@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, findAll, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { next } from '@ember/runloop';
 
@@ -12,7 +12,7 @@ module('auto-focus', function(hooks) {
 
     await render(hbs `{{auto-focus}}`);
 
-    assert.equal(this.$('span').length, 1,
+    assert.equal(findAll('span').length, 1,
       'renders as an inline element (ideally there would be no element)');
   });
 
@@ -24,25 +24,25 @@ module('auto-focus', function(hooks) {
     await render(hbs `
       {{#if show}}
         {{#auto-focus}}
-          <div class='foo' tabindex=0></div>
+          <div class="foo" tabindex=0></div>
         {{/auto-focus}}
       {{/if}}
     `);
 
     next(() => {
-      assert.ok(document.activeElement === this.$('.foo').get(0),
+      assert.ok(document.activeElement === find('.foo'),
         'first child is focused on initial render');
     });
 
     next(() => {
       this.set('show', false);
-      assert.ok(!this.$('.foo').length,
+      assert.ok(!findAll('.foo').length,
         'precondition, element is removed from the DOM');
     });
 
     next(() => {
       this.set('show', true);
-      assert.ok(document.activeElement === this.$('.foo').get(0),
+      assert.ok(document.activeElement === find('.foo'),
         'first child is focused on subsequent renders');
     });
   });
@@ -63,7 +63,7 @@ module('auto-focus', function(hooks) {
     `);
 
     next(() => {
-      assert.ok(document.activeElement === this.$(this.get('selector')).get(0),
+      assert.ok(document.activeElement === find(this.get('selector')),
         'focuses the element specified by the selector');
     });
   });
@@ -73,11 +73,11 @@ module('auto-focus', function(hooks) {
 
     await render(hbs `
       <div class="focusable" tabindex=0></div>
-      {{#auto-focus '.focusable'}}{{/auto-focus}}
+      {{#auto-focus ".focusable"}}{{/auto-focus}}
     `);
 
     next(() => {
-      assert.ok(document.activeElement !== this.$('.focusable').get(0),
+      assert.ok(document.activeElement !== find('.focusable'),
         'selector should be scoped to child elements only');
     });
   });
@@ -87,12 +87,12 @@ module('auto-focus', function(hooks) {
 
     await render(hbs `
       {{#auto-focus disabled=true}}
-        <div class='foo' tabindex=0></div>
+        <div class="foo" tabindex=0></div>
       {{/auto-focus}}
     `);
 
     next(() => {
-      assert.ok(!this.$('.foo').is(':focus'),
+      assert.ok(document.activeElement !== find('.foo'),
         'does not focus the first child if disabled');
     });
   });
