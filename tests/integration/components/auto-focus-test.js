@@ -57,7 +57,7 @@ module('auto-focus', function(hooks) {
       {{/auto-focus}}
     `);
 
-    assert.ok(document.activeElement === find(this.get('selector')),
+    assert.ok(document.activeElement === find(this.selector),
       'focuses the element specified by the selector');
   });
 

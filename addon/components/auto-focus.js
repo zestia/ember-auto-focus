@@ -10,12 +10,12 @@ const AutoFocusComponent = Component.extend({
   },
 
   _autofocus() {
-    if (this.get('disabled')) {
+    if (this.disabled) {
       return false;
     }
 
-    const selector = this.getWithDefault('selector', ':first-child');
-    const child    = this.get('element').querySelector(selector);
+    const selector = this.selector || ':first-child';
+    const child    = this.element.querySelector(selector);
 
     if (child) {
       child.focus();
