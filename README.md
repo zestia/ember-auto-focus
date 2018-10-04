@@ -27,7 +27,7 @@ Alternatively, you can pass in a selector using a positonal param, or by `@selec
 
 You can set the disabled attribute to true to prevent autofocusing:
 
-```html
+```handlebars
 <AutoFocus @disabled={{shouldAutoFocus}}>
    ...
 </AutoFocus>
