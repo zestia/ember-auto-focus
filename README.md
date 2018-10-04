@@ -12,12 +12,12 @@ When the auto-focus element is inserted, it will attempt to focus the first chil
 
 ```handlebars
 {{#if showField}}
-  {{#auto-focus}}
+  <AutoFocus>
     <input>
-  {{/auto-focus}}
+  </AutoFocus>
 {{/if}}
 ```
-Alternatively, you can pass in a selector:
+Alternatively, you can pass in a selector using a positonal param, or by `@selector` argument.
 
 ```handlebars
 {{#auto-focus ".my-child"}}
@@ -28,9 +28,9 @@ Alternatively, you can pass in a selector:
 You can set the disabled attribute to true to prevent autofocusing:
 
 ```handlebars
-{{#auto-focus disabled=shouldAutoFocus}}
+<AutoFocus @disabled={{shouldAutoFocus}}>
    ...
-{{/auto-focus}}
+</AutoFocus>
 ```
 
 ### Installation
