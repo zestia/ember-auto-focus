@@ -729,10 +729,10 @@
   resolved "https://registry.yarnpkg.com/@zestia/ember-template-lint-plugin/-/ember-template-lint-plugin-2.0.0.tgz#b7f04757a113c24d2f614e19df2c31cdc53f0c02"
   integrity sha512-1OKBHi8cUuxLADkrQb6hUEXyN5iJge5BIxybtPGU6fIMZNUclmq1lj9LEJydqi7wRCEEqm29PN1vQajWP9GAuw==
 
-"@zestia/eslint-config@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@zestia/eslint-config/-/eslint-config-2.0.2.tgz#b244de14e557a758da6f6578a80b0aa7b8df5003"
-  integrity sha512-9xdw2vKYJK/qJmo5GwJZUzt17Q1nARVu3Yrg0UjK7JT1ofdEfhtlK0SVhenSQpuLWni9eRtOdXp620kNQCkBlA==
+"@zestia/eslint-config@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@zestia/eslint-config/-/eslint-config-2.0.3.tgz#c3c55569bcf3084b0547e69aedd151dbffe24ccb"
+  integrity sha512-pvnwn4WZ0E4AkIek0/JDz21h3yTqTWUjGFev5wy935TNJuH1k/FdxS2fMJml4vlJNsT5R3SoxWNeMzrpF7pHzA==
   dependencies:
     eslint-config-prettier "^3.3.0"
     eslint-plugin-ember "^6.0.0"

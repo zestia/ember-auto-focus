@@ -15,7 +15,7 @@ const AutoFocusComponent = Component.extend({
     }
 
     const selector = this.selector || ':first-child';
-    const child    = this.element.querySelector(selector);
+    const child = this.element.querySelector(selector);
 
     if (child) {
       child.focus();
