@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  name: '@zestia/ember-auto-focus'
+  name: require('./package').name // eslint-disable-line global-require
 };
