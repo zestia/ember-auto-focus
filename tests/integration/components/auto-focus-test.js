@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, findAll, find } from '@ember/test-helpers';
+import { render, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('auto-focus', function(hooks) {
@@ -9,10 +9,11 @@ module('auto-focus', function(hooks) {
   test('it renders', async function(assert) {
     assert.expect(1);
 
-    await render(hbs `{{auto-focus}}`);
+    await render(hbs`{{auto-focus}}`);
 
-    assert.equal(findAll('span').length, 1,
-      'renders as an inline element (ideally there would be no element)');
+    assert
+      .dom('span')
+      .exists({ count: 1 }, 'renders as an inline element (ideally there would be no element)');
   });
 
   test('it focuses the first child by default', async function(assert) {
@@ -20,7 +21,7 @@ module('auto-focus', function(hooks) {
 
     this.set('show', true);
 
-    await render(hbs `
+    await render(hbs`
       {{#if show}}
         {{#auto-focus}}
           <div class="foo" tabindex=0></div>
@@ -28,18 +29,18 @@ module('auto-focus', function(hooks) {
       {{/if}}
     `);
 
-    assert.ok(document.activeElement === find('.foo'),
-      'first child is focused on initial render');
+    assert.ok(document.activeElement === find('.foo'), 'first child is focused on initial render');
 
     this.set('show', false);
 
-    assert.ok(!findAll('.foo').length,
-      'precondition, element is removed from the DOM');
+    assert.dom('.foo').exists({ count: 0 }, 'precondition, element is removed from the DOM');
 
     this.set('show', true);
 
-    assert.ok(document.activeElement === find('.foo'),
-      'first child is focused on subsequent renders');
+    assert.ok(
+      document.activeElement === find('.foo'),
+      'first child is focused on subsequent renders'
+    );
   });
 
   test('it can focus a specific child element', async function(assert) {
@@ -47,7 +48,7 @@ module('auto-focus', function(hooks) {
 
     this.set('selector', '.outer > .inner > .foo');
 
-    await render(hbs `
+    await render(hbs`
       {{#auto-focus selector}}
         <div class="outer">
           <div class="inner">
@@ -57,32 +58,38 @@ module('auto-focus', function(hooks) {
       {{/auto-focus}}
     `);
 
-    assert.ok(document.activeElement === find(this.selector),
-      'focuses the element specified by the selector');
+    assert.ok(
+      document.activeElement === find(this.selector),
+      'focuses the element specified by the selector'
+    );
   });
 
   test('it does not focus any old element', async function(assert) {
     assert.expect(1);
 
-    await render(hbs `
+    await render(hbs`
       <div class="focusable" tabindex=0></div>
       {{#auto-focus ".focusable"}}{{/auto-focus}}
     `);
 
-    assert.ok(document.activeElement !== find('.focusable'),
-      'selector should be scoped to child elements only');
+    assert.ok(
+      document.activeElement !== find('.focusable'),
+      'selector should be scoped to child elements only'
+    );
   });
 
   test('disabling', async function(assert) {
     assert.expect(1);
 
-    await render(hbs `
+    await render(hbs`
       {{#auto-focus disabled=true}}
         <div class="foo" tabindex=0></div>
       {{/auto-focus}}
     `);
 
-    assert.ok(document.activeElement !== find('.foo'),
-      'does not focus the first child if disabled');
+    assert.ok(
+      document.activeElement !== find('.foo'),
+      'does not focus the first child if disabled'
+    );
   });
 });

@@ -729,10 +729,10 @@
   resolved "https://registry.yarnpkg.com/@zestia/ember-template-lint-plugin/-/ember-template-lint-plugin-2.0.0.tgz#b7f04757a113c24d2f614e19df2c31cdc53f0c02"
   integrity sha512-1OKBHi8cUuxLADkrQb6hUEXyN5iJge5BIxybtPGU6fIMZNUclmq1lj9LEJydqi7wRCEEqm29PN1vQajWP9GAuw==
 
-"@zestia/eslint-config@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@zestia/eslint-config/-/eslint-config-2.0.1.tgz#5127f0efdb45d4cab05ab07d1b4ff6044b4d2cf1"
-  integrity sha512-tSDvyg/ZYJjfFbj6fDVlKCkGWcEbp5Dwclau19yoKu+5Ta7ezQ8Ye5IbLjHA95eVdhsRoLNqDGF/iWCrRO5HTQ==
+"@zestia/eslint-config@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@zestia/eslint-config/-/eslint-config-2.0.2.tgz#b244de14e557a758da6f6578a80b0aa7b8df5003"
+  integrity sha512-9xdw2vKYJK/qJmo5GwJZUzt17Q1nARVu3Yrg0UjK7JT1ofdEfhtlK0SVhenSQpuLWni9eRtOdXp620kNQCkBlA==
   dependencies:
     eslint-config-prettier "^3.3.0"
     eslint-plugin-ember "^6.0.0"
@@ -740,6 +740,11 @@
     eslint-plugin-node "^8.0.0"
     eslint-plugin-prettier "^3.0.0"
     prettier "^1.15.2"
+
+"@zestia/prettier-config@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@zestia/prettier-config/-/prettier-config-0.0.1.tgz#8cee1e8d2245e368367687fef707a1a2f5bb1b17"
+  integrity sha512-/5hmfYVsMQPL8M2MYUaTSZmdU98ptD3XpekqDImUEh4xbkjcXRiH8YocEuUFC4jU4wXql6SPqkr5kgjtigBe7g==
 
 "@zestia/stylelint-config@2.0.2":
   version "2.0.2"
@@ -8875,7 +8880,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^1.15.2:
+prettier@1.15.2, prettier@^1.15.2:
   version "1.15.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.15.2.tgz#d31abe22afa4351efa14c7f8b94b58bb7452205e"
   integrity sha512-YgPLFFA0CdKL4Eg2IHtUSjzj/BWgszDHiNQAe0VAIBse34148whfdzLagRL+QiKS+YfK5ftB6X4v/MBw8yCoug==
@@ -9063,6 +9068,14 @@ quick-temp@^0.1.2, quick-temp@^0.1.3, quick-temp@^0.1.5, quick-temp@^0.1.8:
     mktemp "~0.4.0"
     rimraf "^2.5.4"
     underscore.string "~3.3.4"
+
+qunit-dom@0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/qunit-dom/-/qunit-dom-0.8.0.tgz#a735e7f6ec2e9d08ec5bb695b3d52c97011e69b8"
+  integrity sha512-GGIJnDUCQI8bxxz1yD4sBAQOWlS9JxnWsVpGtkzz/D0GHooc3AkOdjpQq/55WfmJl8pG8uHKqTy0eKse6fbSpw==
+  dependencies:
+    broccoli-funnel "^2.0.0"
+    broccoli-merge-trees "^3.0.1"
 
 qunit@^2.8.0:
   version "2.8.0"

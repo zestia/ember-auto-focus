@@ -26,7 +26,8 @@
   "devDependencies": {
     "@ember/optional-features": "0.7.0",
     "@zestia/ember-template-lint-plugin": "2.0.0",
-    "@zestia/eslint-config": "2.0.1",
+    "@zestia/eslint-config": "2.0.2",
+    "@zestia/prettier-config": "0.0.1",
     "@zestia/stylelint-config": "2.0.2",
     "broccoli-asset-rev": "3.0.0",
     "ember-cli-dependency-checker": "3.0.0",
@@ -50,7 +51,9 @@
     "ember-template-lint": "1.0.0-beta.6",
     "ember-try": "1.1.0",
     "eslint": "5.9.0",
-    "loader.js": "4.7.0"
+    "loader.js": "4.7.0",
+    "prettier": "1.15.2",
+    "qunit-dom": "0.8.0"
   },
   "dependencies": {
     "ember-cli-babel": "^6.16.0",
