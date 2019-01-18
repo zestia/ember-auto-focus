@@ -9,7 +9,7 @@ module('auto-focus', function(hooks) {
   test('it renders', async function(assert) {
     assert.expect(1);
 
-    await render(hbs`{{auto-focus}}`);
+    await render(hbs`{{component "auto-focus"}}`);
 
     assert
       .dom('span')
@@ -22,9 +22,9 @@ module('auto-focus', function(hooks) {
     this.set('show', true);
 
     await render(hbs`
-      {{#if show}}
+      {{#if this.show}}
         {{#auto-focus}}
-          <div class="foo" tabindex=0></div>
+          <div class="foo" tabindex="0"></div>
         {{/auto-focus}}
       {{/if}}
     `);
@@ -49,10 +49,11 @@ module('auto-focus', function(hooks) {
     this.set('selector', '.outer > .inner > .foo');
 
     await render(hbs`
+      {{! template-lint-disable no-implicit-this }}
       {{#auto-focus selector}}
         <div class="outer">
           <div class="inner">
-            <div class="foo" tabindex=0"></div>
+            <div class="foo" tabindex="0"></div>
           </div>
         </div>
       {{/auto-focus}}

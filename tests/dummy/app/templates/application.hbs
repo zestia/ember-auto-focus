@@ -1,28 +1,28 @@
 <h1>@zestia/ember-auto-focus</h1>
 
-{{#if showInput}}
-  {{#auto-focus}}
+{{#if this.showInput}}
+  <AutoFocus>
     <input>
-  {{/auto-focus}}
+  </AutoFocus>
 {{/if}}
 
 <p>
-  <button onclick={{action (mut showInput) true}}>Show input</button>
-  <button onclick={{action (mut showInput) false}}>Hide input</button>
+  <button onclick={{action (mut this.showInput) true}}>Show input</button>
+  <button onclick={{action (mut this.showInput) false}}>Hide input</button>
 </p>
 
 
-{{#if showComponent}}
-  {{#auto-focus selector=".outer > .inner > .foo"}}
+{{#if this.showComponent}}
+  <AutoFocus @selector=".outer > .inner > .foo">
     <div class="outer">
       <span class="inner">
         <div class="foo" tabindex="0"></div>
       </span>
     </div>
-  {{/auto-focus}}
+  </AutoFocus>
 {{/if}}
 
 <p>
-  <button onclick={{action (mut showComponent) true}}>Show component</button>
-  <button onclick={{action (mut showComponent) false}}>Hide component</button>
+  <button onclick={{action (mut this.showComponent) true}}>Show component</button>
+  <button onclick={{action (mut this.showComponent) false}}>Hide component</button>
 </p>
