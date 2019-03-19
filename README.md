@@ -2,9 +2,7 @@
 
 <a href="http://emberobserver.com/addons/ember-auto-focus"><img src="http://emberobserver.com/badges/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#dev-badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus/dev-status.svg"></a> &nbsp; <a href="http://travis-ci.org/zestia/ember-auto-focus"><img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=master"></a>
 
-HTML's `autofocus` attribute focuses an element on _page load_.
-
-However, in single page apps the page load event only happens once - so `autofocus` pretty much becomes useless for subsequent changes to the DOM.
+HTML's `autofocus` focuses an element on the first occurence of the attribute. However, in single page apps this can mean autofocus will only work once. 
 
 ## Example
 
