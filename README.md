@@ -17,11 +17,11 @@ When the auto-focus component is inserted, it will attempt to focus the first ch
   </AutoFocus>
 {{/if}}
 ```
-Alternatively, you can pass in a selector using a positonal param, or by `@selector` argument.
+Alternatively, you can pass in a selector using a positonal param, or by the `@selector` argument.
 
 ```handlebars
 <AutoFocus @selector=".my-child">
-  <div class="my-child tabindex="0"></div>
+  <div class="my-child" tabindex="0"></div>
 </AutoFocus>
 ```
 
