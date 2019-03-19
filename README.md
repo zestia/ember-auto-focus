@@ -4,14 +4,14 @@
 
 HTML's `autofocus` attribute focuses an element on _page load_.
 
-However, in single page apps the page load event only happens once - so `autofocus` pretty much becomes useless.
+However, in single page apps the page load event only happens once - so `autofocus` pretty much becomes useless for subsequent changes to the DOM.
 
 ## Example
 
 When the auto-focus element is inserted, it will attempt to focus the first child contained within it:
 
 ```handlebars
-{{#if showField}}
+{{#if this.showField}}
   <AutoFocus>
     <input>
   </AutoFocus>
@@ -20,15 +20,21 @@ When the auto-focus element is inserted, it will attempt to focus the first chil
 Alternatively, you can pass in a selector using a positonal param, or by `@selector` argument.
 
 ```handlebars
+<AutoFocus @selector=".my-child">
+  <div class="my-child tabindex="0"></div>
+</AutoFocus>
+```
+
+```handlebars
 {{#auto-focus ".my-child"}}
-  <div class="my-child" tabindex=0></div>
+  <div class="my-child" tabindex="0"></div>
 {{/auto-focus}}
 ```
 
 You can set the disabled attribute to true to prevent autofocusing:
 
 ```handlebars
-<AutoFocus @disabled={{shouldAutoFocus}}>
+<AutoFocus @disabled={{this.shouldAutoFocus}}>
    ...
 </AutoFocus>
 ```

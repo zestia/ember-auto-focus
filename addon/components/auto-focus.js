@@ -3,6 +3,7 @@ import { scheduleOnce } from '@ember/runloop';
 
 const AutoFocusComponent = Component.extend({
   tagName: 'span',
+  classNames: ['auto-focus'],
 
   didInsertElement() {
     this._super(...arguments);

@@ -12,8 +12,8 @@ module('auto-focus', function(hooks) {
     await render(hbs`{{component "auto-focus"}}`);
 
     assert
-      .dom('span')
-      .exists({ count: 1 }, 'renders as an inline element (ideally there would be no element)');
+      .dom('span.auto-focus')
+      .exists({ count: 1 }, 'renders as an inline element (ideally there would be no element!)');
   });
 
   test('it focuses the first child by default', async function(assert) {
