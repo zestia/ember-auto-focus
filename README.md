@@ -8,7 +8,7 @@ However, in single page apps the page load event only happens once - so `autofoc
 
 ## Example
 
-When the auto-focus element is inserted, it will attempt to focus the first child contained within it:
+When the auto-focus component is inserted, it will attempt to focus the first child contained within it:
 
 ```handlebars
 {{#if this.showField}}
