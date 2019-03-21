@@ -1,8 +1,8 @@
 # @zestia/ember-auto-focus
 
-<a href="http://emberobserver.com/addons/ember-auto-focus"><img src="http://emberobserver.com/badges/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#dev-badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus/dev-status.svg"></a> &nbsp; <a href="http://travis-ci.org/zestia/ember-auto-focus"><img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=master"></a>
+<a href="https://badge.fury.io/js/%40zestia%2Fember-auto-focus"><img src="https://badge.fury.io/js/%40zestia%2Fember-auto-focus.svg" alt="npm version" height="18"></a> &nbsp; <a href="http://travis-ci.org/zestia/ember-auto-focus"><img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=master"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#dev-badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus/dev-status.svg"></a> &nbsp; <a href="http://emberobserver.com/addons/ember-auto-focus"><img src="http://emberobserver.com/badges/ember-auto-focus.svg"></a>
 
-HTML's `autofocus` focuses an element on the first occurence of the attribute. However, in single page apps this can mean autofocus will only work once. 
+HTML's `autofocus` focuses an element on the first occurence of the attribute. However, in single page apps this can mean autofocus will only work once.
 
 ## Example
 
