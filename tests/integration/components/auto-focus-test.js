@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('auto-focus', function(hooks) {
@@ -29,7 +29,7 @@ module('auto-focus', function(hooks) {
       {{/if}}
     `);
 
-    assert.ok(document.activeElement === find('.foo'), 'first child is focused on initial render');
+    assert.dom('.foo').isFocused('first child is focused on initial render');
 
     this.set('show', false);
 
@@ -37,10 +37,7 @@ module('auto-focus', function(hooks) {
 
     this.set('show', true);
 
-    assert.ok(
-      document.activeElement === find('.foo'),
-      'first child is focused on subsequent renders'
-    );
+    assert.dom('.foo').isFocused('first child is focused on subsequent renders');
   });
 
   test('it can focus a specific child element', async function(assert) {
@@ -59,10 +56,7 @@ module('auto-focus', function(hooks) {
       {{/auto-focus}}
     `);
 
-    assert.ok(
-      document.activeElement === find(this.selector),
-      'focuses the element specified by the selector'
-    );
+    assert.dom(this.selector).isFocused('focuses the element specified by the selector');
   });
 
   test('it does not focus any old element', async function(assert) {
@@ -73,10 +67,7 @@ module('auto-focus', function(hooks) {
       {{#auto-focus ".focusable"}}{{/auto-focus}}
     `);
 
-    assert.ok(
-      document.activeElement !== find('.focusable'),
-      'selector should be scoped to child elements only'
-    );
+    assert.dom('.focusable').isNotFocused('selector should be scoped to child elements only');
   });
 
   test('disabling', async function(assert) {
@@ -88,9 +79,6 @@ module('auto-focus', function(hooks) {
       {{/auto-focus}}
     `);
 
-    assert.ok(
-      document.activeElement !== find('.foo'),
-      'does not focus the first child if disabled'
-    );
+    assert.dom('.foo').isNotFocused('does not focus the first child if disabled');
   });
 });
