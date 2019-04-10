@@ -9,7 +9,7 @@ module('auto-focus', function(hooks) {
   test('it renders', async function(assert) {
     assert.expect(1);
 
-    await render(hbs`{{component "auto-focus"}}`);
+    await render(hbs`<AutoFocus />`);
 
     assert
       .dom('span.auto-focus')
@@ -23,9 +23,9 @@ module('auto-focus', function(hooks) {
 
     await render(hbs`
       {{#if this.show}}
-        {{#auto-focus}}
+        <AutoFocus>
           <div class="foo" tabindex="0"></div>
-        {{/auto-focus}}
+        </AutoFocus>
       {{/if}}
     `);
 
@@ -46,25 +46,24 @@ module('auto-focus', function(hooks) {
     this.set('selector', '.outer > .inner > .foo');
 
     await render(hbs`
-      {{! template-lint-disable no-implicit-this }}
-      {{#auto-focus selector}}
+      <AutoFocus @selector={{this.selector}}>
         <div class="outer">
           <div class="inner">
             <div class="foo" tabindex="0"></div>
           </div>
         </div>
-      {{/auto-focus}}
+      </AutoFocus>
     `);
 
     assert.dom(this.selector).isFocused('focuses the element specified by the selector');
   });
 
-  test('it does not focus any old element', async function(assert) {
+  test('it does not focus an element outside of itself', async function(assert) {
     assert.expect(1);
 
     await render(hbs`
-      <div class="focusable" tabindex=0></div>
-      {{#auto-focus ".focusable"}}{{/auto-focus}}
+      <div class="focusable" tabindex="0"></div>
+      <AutoFocus @selector=".focusable"></AutoFocus>
     `);
 
     assert.dom('.focusable').isNotFocused('selector should be scoped to child elements only');
@@ -74,9 +73,9 @@ module('auto-focus', function(hooks) {
     assert.expect(1);
 
     await render(hbs`
-      {{#auto-focus disabled=true}}
-        <div class="foo" tabindex=0></div>
-      {{/auto-focus}}
+      <AutoFocus @disabled={{true}}>
+        <div class="foo" tabindex="0">/</div>
+      </AutoFocus>
     `);
 
     assert.dom('.foo').isNotFocused('does not focus the first child if disabled');

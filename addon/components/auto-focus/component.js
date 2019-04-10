@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { scheduleOnce } from '@ember/runloop';
 import layout from './template';
 
-const AutoFocusComponent = Component.extend({
+export default Component.extend({
   layout,
   tagName: 'span',
   classNames: ['auto-focus'],
@@ -25,9 +25,3 @@ const AutoFocusComponent = Component.extend({
     }
   }
 });
-
-AutoFocusComponent.reopenClass({
-  positionalParams: ['selector']
-});
-
-export default AutoFocusComponent;
