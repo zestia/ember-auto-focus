@@ -14,7 +14,7 @@ export default Component.extend({
 
   _autofocus() {
     if (this.disabled) {
-      return false;
+      return;
     }
 
     const selector = this.selector || ':first-child';
