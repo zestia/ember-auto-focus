@@ -1,13 +1,17 @@
 # Changelog
 
-3.0.2
+## 3.0.3
 
-* Update dependancies
+- Update dependencies
 
-3.0.0
+## 3.0.2
 
-* Removes use of positional parameter `{{auto-focus ".my-element"}}`
+- Update dependencies
 
-< 3.0.0
+## 3.0.0
 
-* No changelog
+- Removes use of positional parameter `{{auto-focus ".my-element"}}`
+
+## < 3.0.0
+
+- No changelog
