@@ -90,7 +90,11 @@ module('auto-focus', function(hooks) {
       </AutoFocus>
     `); // Intentionally no await
 
-    await waitUntil(() => getSettledState().hasPendingTimers === true);
+    await waitUntil(() => {
+      const state = getSettledState();
+
+      return state.hasPendingTimers === true && state.hasRunLoop === false;
+    });
 
     assert.strictEqual(
       find('.foo').dataset.programaticallyFocused,
