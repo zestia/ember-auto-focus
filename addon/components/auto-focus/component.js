@@ -1,5 +1,6 @@
 import Component from '@ember/component';
-import { scheduleOnce, next } from '@ember/runloop';
+import { scheduleOnce } from '@ember/runloop';
+import focus from '../../utils/focus';
 import layout from './template';
 
 export default Component.extend({
@@ -21,9 +22,7 @@ export default Component.extend({
     const element = this.element.querySelector(selector);
 
     if (element) {
-      element.dataset.programaticallyFocused = true;
-      element.focus();
-      next(() => delete element.dataset.programaticallyFocused);
+      focus(element);
     }
   }
 });
