@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, settled, waitUntil, getSettledState, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('auto-focus', function(hooks) {
@@ -79,5 +79,31 @@ module('auto-focus', function(hooks) {
     `);
 
     assert.dom('.foo').isNotFocused('does not focus the first child if disabled');
+  });
+
+  test('programatic focus dataset property', async function(assert) {
+    assert.expect(2);
+
+    render(hbs`
+      <AutoFocus>
+        <div class="foo" tabindex="0">/</div>
+      </AutoFocus>
+    `); // Intentionally no await
+
+    await waitUntil(() => getSettledState().hasPendingTimers === true);
+
+    assert.strictEqual(
+      find('.foo').dataset.programaticallyFocused,
+      'true',
+      'property is true because this addon focused the element'
+    );
+
+    await settled();
+
+    assert.strictEqual(
+      find('.foo').dataset.programaticallyFocused,
+      undefined,
+      'property removed after focus'
+    );
   });
 });

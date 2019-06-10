@@ -15,6 +15,7 @@ When the auto-focus component is inserted, it will attempt to focus the first ch
   </AutoFocus>
 {{/if}}
 ```
+
 Alternatively, you can pass in a selector:
 
 ```handlebars
@@ -31,7 +32,17 @@ You can set the disabled attribute to true to prevent autofocusing:
 </AutoFocus>
 ```
 
+## Differentiating between user focus and programatic focus
+
+Sometimes it's useful to know whether the element that received focus, did so via a user interacting
+with it, or by _your code_.
+
+This addon sets a temporary dataset property on the element being focused.
+`element.dataset.programaticallyFocused` will be true if focused by this addon, and false if focused
+by the user using your app.
+
 ### Installation
+
 ```
 ember install @zestia/ember-auto-focus
 ```
