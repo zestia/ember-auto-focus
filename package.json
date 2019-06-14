@@ -14,8 +14,7 @@
     "lint:css": "stylelint --allow-empty-input '**/*.{css,scss}'",
     "start": "ember serve",
     "test": "ember test && yarn lint",
-    "test:all": "ember try:each",
-    "deploy": "ember build --environment production && ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\" && git push origin gh-pages:gh-pages"
+    "test:all": "ember try:each"
   },
   "repository": {
     "type": "git",
@@ -34,7 +33,6 @@
     "@zestia/stylelint-config": "2.0.11",
     "broccoli-asset-rev": "3.0.0",
     "ember-cli-dependency-checker": "3.2.0",
-    "ember-cli-github-pages": "0.2.1",
     "ember-cli-htmlbars-inline-precompile": "2.1.0",
     "ember-cli-inject-live-reload": "2.0.1",
     "ember-cli-release-tag": "0.1.5",
