@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.5
+
+- Upgrade dependencies
+
 ## 3.0.4
 
 - Introduce a way to distinguish between user focus and programatic focus

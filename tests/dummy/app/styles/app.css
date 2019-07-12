@@ -1,10 +1,15 @@
+:root {
+  --red: red;
+  --green: green;
+}
+
 .foo {
   outline: none;
-  border: 2px solid red;
+  border: 2px solid var(--red);
   width: 50px;
   height: 50px;
 }
 
 .foo:focus {
-  border-color: green;
+  border-color: var(--green);
 }
