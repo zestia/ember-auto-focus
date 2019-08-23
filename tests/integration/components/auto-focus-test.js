@@ -19,7 +19,10 @@ module('auto-focus', function(hooks) {
 
     assert
       .dom('span.auto-focus')
-      .exists({ count: 1 }, 'renders as an inline element (ideally there would be no element!)');
+      .exists(
+        { count: 1 },
+        'renders as an inline element (ideally there would be no element!)'
+      );
   });
 
   test('it focuses the first child by default', async function(assert) {
@@ -39,11 +42,15 @@ module('auto-focus', function(hooks) {
 
     this.set('show', false);
 
-    assert.dom('.foo').exists({ count: 0 }, 'precondition, element is removed from the DOM');
+    assert
+      .dom('.foo')
+      .exists({ count: 0 }, 'precondition, element is removed from the DOM');
 
     this.set('show', true);
 
-    assert.dom('.foo').isFocused('first child is focused on subsequent renders');
+    assert
+      .dom('.foo')
+      .isFocused('first child is focused on subsequent renders');
   });
 
   test('it can focus a specific child element', async function(assert) {
@@ -61,7 +68,9 @@ module('auto-focus', function(hooks) {
       </AutoFocus>
     `);
 
-    assert.dom(this.selector).isFocused('focuses the element specified by the selector');
+    assert
+      .dom(this.selector)
+      .isFocused('focuses the element specified by the selector');
   });
 
   test('it does not focus an element outside of itself', async function(assert) {
@@ -72,7 +81,9 @@ module('auto-focus', function(hooks) {
       <AutoFocus @selector=".focusable"></AutoFocus>
     `);
 
-    assert.dom('.focusable').isNotFocused('selector should be scoped to child elements only');
+    assert
+      .dom('.focusable')
+      .isNotFocused('selector should be scoped to child elements only');
   });
 
   test('disabling', async function(assert) {
@@ -84,7 +95,9 @@ module('auto-focus', function(hooks) {
       </AutoFocus>
     `);
 
-    assert.dom('.foo').isNotFocused('does not focus the first child if disabled');
+    assert
+      .dom('.foo')
+      .isNotFocused('does not focus the first child if disabled');
   });
 
   test('programatic focus dataset property', async function(assert) {
