@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.6
+
+- Upgrade dependencies
+
 ## 3.0.5
 
 - Upgrade dependencies
