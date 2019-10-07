@@ -1,23 +1,23 @@
 import Component from '@ember/component';
 import focus from '../../utils/focus';
 import layout from './template';
-import { action } from '@ember/object';
 
-export default class AutoFocusComponent extends Component {
-  layout = layout;
-  tagName = '';
+export default Component.extend({
+  layout,
+  tagName: '',
 
-  @action
-  autoFocus(element) {
-    if (this.disabled) {
-      return;
-    }
+  actions: {
+    autoFocus(element) {
+      if (this.disabled) {
+        return;
+      }
 
-    const selector = this.selector || ':first-child';
-    const childElement = element.querySelector(selector);
+      const selector = this.selector || ':first-child';
+      const childElement = element.querySelector(selector);
 
-    if (childElement) {
-      focus(childElement);
+      if (childElement) {
+        focus(childElement);
+      }
     }
   }
-}
+});
