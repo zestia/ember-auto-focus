@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.8
+
+- Internal refactor
+- Upgrade dependencies
+
 ## 3.0.7
 
 - Upgrade dependencies
