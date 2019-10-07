@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.9
+
+- Fix backwards compatibility
+
 ## 3.0.8
 
 - Internal refactor
