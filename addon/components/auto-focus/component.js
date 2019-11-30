@@ -1,23 +1,23 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
+import { setComponentTemplate } from '@ember/component';
 import focus from '../../utils/focus';
-import layout from './template';
+import { action } from '@ember/object';
+import template from './template';
 
-export default Component.extend({
-  layout,
-  tagName: '',
+class AutoFocusComponent extends Component {
+  @action
+  autoFocus(element) {
+    if (this.args.disabled) {
+      return;
+    }
 
-  actions: {
-    autoFocus(element) {
-      if (this.disabled) {
-        return;
-      }
+    const selector = this.args.selector || ':first-child';
+    const childElement = element.querySelector(selector);
 
-      const selector = this.selector || ':first-child';
-      const childElement = element.querySelector(selector);
-
-      if (childElement) {
-        focus(childElement);
-      }
+    if (childElement) {
+      focus(childElement);
     }
   }
-});
+}
+
+export default setComponentTemplate(template, AutoFocusComponent);

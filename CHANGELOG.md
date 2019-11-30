@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.11
+
+- Migrate to Glimmer component
+
 ## 3.0.10
 
 - Upgrade dependencies
