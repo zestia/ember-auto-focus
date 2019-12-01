@@ -1,28 +1,23 @@
-import Component from '@ember/component';
-import { scheduleOnce } from '@ember/runloop';
+import Component from '@glimmer/component';
+import { setComponentTemplate } from '@ember/component';
 import focus from '../../utils/focus';
-import layout from './template';
+import { action } from '@ember/object';
+import template from './template';
 
-export default Component.extend({
-  layout,
-  tagName: 'span',
-  classNames: ['auto-focus'],
-
-  didInsertElement() {
-    this._super(...arguments);
-    scheduleOnce('afterRender', this, '_autofocus');
-  },
-
-  _autofocus() {
-    if (this.disabled) {
+class AutoFocusComponent extends Component {
+  @action
+  autoFocus(element) {
+    if (this.args.disabled) {
       return;
     }
 
-    const selector = this.selector || ':first-child';
-    const element = this.element.querySelector(selector);
+    const selector = this.args.selector || ':first-child';
+    const childElement = element.querySelector(selector);
 
-    if (element) {
-      focus(element);
+    if (childElement) {
+      focus(childElement);
     }
   }
-});
+}
+
+export default setComponentTemplate(template, AutoFocusComponent);

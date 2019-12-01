@@ -4,6 +4,12 @@
 
 HTML's `autofocus` focuses an element on the first occurence of the attribute. However, in single page apps this can mean autofocus will only work once.
 
+## Installation
+
+```
+ember install @zestia/ember-auto-focus
+```
+
 ## Example
 
 When the auto-focus component is inserted, it will attempt to focus the first child contained within it:
@@ -40,9 +46,3 @@ with it, or by _your code_.
 This addon sets a temporary dataset property on the element being focused.
 `element.dataset.programaticallyFocused` will be true if focused by this addon, and false if focused
 by the user using your app.
-
-### Installation
-
-```
-ember install @zestia/ember-auto-focus
-```

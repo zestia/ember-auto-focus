@@ -1,5 +1,26 @@
 # Changelog
 
+## 3.0.11
+
+- Migrate to Glimmer component
+
+## 3.0.10
+
+- Upgrade dependencies
+
+## 3.0.9
+
+- Fix backwards compatibility
+
+## 3.0.8
+
+- Internal refactor
+- Upgrade dependencies
+
+## 3.0.7
+
+- Upgrade dependencies
+
 ## 3.0.6
 
 - Upgrade dependencies
