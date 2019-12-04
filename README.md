@@ -4,6 +4,8 @@
 
 HTML's `autofocus` focuses an element on the first occurence of the attribute. However, in single page apps this can mean autofocus will only work once.
 
+This addon provides an element modifier, which auto focuses the element it is applied to whenever it is rendered.
+
 ## Installation
 
 ```
@@ -12,37 +14,30 @@ ember install @zestia/ember-auto-focus
 
 ## Example
 
-When the auto-focus component is inserted, it will attempt to focus the first child contained within it:
-
 ```handlebars
 {{#if this.showField}}
-  <AutoFocus>
-    <input>
-  </AutoFocus>
+  <input {{auto-focus}}>
 {{/if}}
 ```
 
 Alternatively, you can pass in a selector:
 
 ```handlebars
-<AutoFocus @selector=".my-child">
+<div {{auto-focus ".my-child"}}>
   <div class="my-child" tabindex="0"></div>
-</AutoFocus>
+</div>
 ```
 
-You can set the disabled attribute to true to prevent autofocusing:
+You can set disabled to true to prevent autofocusing:
 
 ```handlebars
-<AutoFocus @disabled={{this.shouldAutoFocus}}>
+<div {{auto-focus disabled=this.shouldAutoFocus}}>
    ...
-</AutoFocus>
+</div>
 ```
 
 ## Differentiating between user focus and programatic focus
 
-Sometimes it's useful to know whether the element that received focus, did so via a user interacting
-with it, or by _your code_.
+Sometimes it's useful to know whether the element that received focus, did so via a user interacting with it, or by _your code_.
 
-This addon sets a temporary dataset property on the element being focused.
-`element.dataset.programaticallyFocused` will be true if focused by this addon, and false if focused
-by the user using your app.
+This addon sets a temporary dataset property on the element being focused. `element.dataset.programaticallyFocused` which will be true if focused by this addon, and false if focused by the user using your app.

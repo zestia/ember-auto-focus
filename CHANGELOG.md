@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.0
+
+- BREAKING: Switch from a component to an element modifier
+
 ## 3.0.11
 
 - Migrate to Glimmer component
