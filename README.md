@@ -31,7 +31,7 @@ Alternatively, you can pass in a selector:
 You can set disabled to true to prevent autofocusing:
 
 ```handlebars
-<div {{auto-focus disabled=this.shouldAutoFocus}}>
+<div {{auto-focus disabled=this.shouldAutoFocus}} tabindex="0">
    ...
 </div>
 ```
