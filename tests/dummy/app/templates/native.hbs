@@ -1,6 +1,16 @@
 {{#if this.shouldShowInput}}
-  <input autofocus>
+  <p>
+    <input autofocus>
+  </p>
 {{/if}}
+
+<code>
+  &lt;input autofocus&gt;
+</code>
+
+<p>
+  Notice that on the second render of the input, autofocus does nothing
+</p>
 
 <p>
   <button {{on "click" this.showInput}} type="button">Show input</button>
