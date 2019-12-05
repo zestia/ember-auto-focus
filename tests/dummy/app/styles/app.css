@@ -3,6 +3,11 @@
   --green: green;
 }
 
+/* stylelint-disable-next-line */
+a.active {
+  font-weight: bold;
+}
+
 .foo {
   outline: none;
   border: 2px solid var(--red);

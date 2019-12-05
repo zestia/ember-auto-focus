@@ -1,0 +1,8 @@
+{{#if this.shouldShowInput}}
+  <input autofocus>
+{{/if}}
+
+<p>
+  <button {{on "click" this.showInput}} type="button">Show input</button>
+  <button {{on "click" this.hideInput}} type="button">Hide input</button>
+</p>

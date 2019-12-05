@@ -6,6 +6,9 @@ const DummyRouter = Router.extend({
   rootURL: config.rootURL
 });
 
-DummyRouter.map(function() {});
+DummyRouter.map(function() {
+  this.route('native');
+  this.route('modifier');
+});
 
 export default DummyRouter;

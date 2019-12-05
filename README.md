@@ -12,6 +12,10 @@ This addon provides an element modifier, which auto focuses the element when it 
 ember install @zestia/ember-auto-focus
 ```
 
+## Demo
+
+https://zestia.github.io/ember-auto-focus/
+
 ## Example
 
 ```handlebars

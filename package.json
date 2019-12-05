@@ -16,7 +16,8 @@
     "start": "ember serve",
     "test": "ember test && npm run lint",
     "test:all": "ember try:each",
-    "release": "release-it"
+    "release": "release-it",
+    "deploy": "ember build --environment production && ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\" && git push origin gh-pages:gh-pages"
   },
   "repository": {
     "type": "git",
