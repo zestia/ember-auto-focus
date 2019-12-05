@@ -11,8 +11,6 @@ export default class OnModifier extends Modifier {
 
     let el = this.element;
 
-    console.log(el, this.args.positional[0], this.args.named.disabled);
-
     const selector = this.args.positional[0];
 
     if (selector) {
