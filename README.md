@@ -2,9 +2,9 @@
 
 <a href="https://badge.fury.io/js/%40zestia%2Fember-auto-focus"><img src="https://badge.fury.io/js/%40zestia%2Fember-auto-focus.svg" alt="npm version" height="18"></a> &nbsp; <a href="http://travis-ci.org/zestia/ember-auto-focus"><img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=master"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#dev-badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus/dev-status.svg"></a> &nbsp; <a href="https://emberobserver.com/addons/@zestia/ember-auto-focus"><img src="https://emberobserver.com/badges/-zestia-ember-auto-focus.svg"></a>
 
-HTML's `autofocus` focuses an element on the first occurence of the attribute. However, in single page apps this can mean autofocus will only work once.
+HTML's `autofocus` attribute focuses an element on the first occurence of the attribute. But, does nothing on subsquent renders of the same element.
 
-This addon provides an element modifier, which auto focuses the element it is applied to whenever it is rendered.
+This addon provides an element modifier, which auto focuses the element when it is inserted into the DOM.
 
 ## Installation
 
