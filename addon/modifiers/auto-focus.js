@@ -1,18 +1,26 @@
-import { modifier } from 'ember-modifier';
+import Modifier from 'ember-modifier';
 import focus from '../utils/focus';
 
-export default modifier((element, [selector], { disabled }) => {
-  if (disabled) {
-    return;
-  }
+export default class OnModifier extends Modifier {
+  didInstall() {
+    const { disabled } = this.args.named;
 
-  let el = element;
+    if (disabled) {
+      return;
+    }
 
-  if (selector) {
-    el = el.querySelector(selector);
-  }
+    let el = this.element;
 
-  if (el) {
-    focus(el);
+    console.log(el, this.args.positional[0], this.args.named.disabled);
+
+    const selector = this.args.positional[0];
+
+    if (selector) {
+      el = el.querySelector(selector);
+    }
+
+    if (el) {
+      focus(el);
+    }
   }
-});
+}
