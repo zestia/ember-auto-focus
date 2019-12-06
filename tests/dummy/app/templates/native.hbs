@@ -9,10 +9,18 @@
 </code>
 
 <p>
-  Notice that on the second render, the input <em>is not</em> focused.
+  Notice that on the second render, the input
+  <em>
+    is not
+  </em>
+  focused.
 </p>
 
 <p>
-  <button {{on "click" this.showInput}} type="button">Show input</button>
-  <button {{on "click" this.hideInput}} type="button">Hide input</button>
+  <button type="button" {{on "click" this.showInput}}>
+    Show input
+  </button>
+  <button type="button" {{on "click" this.hideInput}}>
+    Hide input
+  </button>
 </p>
