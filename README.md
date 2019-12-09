@@ -17,7 +17,7 @@
     <img src="https://emberobserver.com/badges/-zestia-ember-auto-focus.svg">
   </a>
 
-  <img src="https://img.shields.io/badge/Ember-%3E%3D%203.11-brightgreen">
+  <img src="https://img.shields.io/badge/Ember-%3E%3D%203.4-brightgreen">
 </p>
 
 HTML's `autofocus` attribute focuses an element on the first occurence of the attribute. But, does nothing on subsquent renders of the same element.
