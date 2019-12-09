@@ -1,6 +1,24 @@
 # @zestia/ember-auto-focus
 
-<a href="https://badge.fury.io/js/%40zestia%2Fember-auto-focus"><img src="https://badge.fury.io/js/%40zestia%2Fember-auto-focus.svg" alt="npm version" height="18"></a> &nbsp; <a href="http://travis-ci.org/zestia/ember-auto-focus"><img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=master"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-auto-focus#dev-badge-embed"><img src="https://david-dm.org/zestia/ember-auto-focus/dev-status.svg"></a> &nbsp; <a href="https://emberobserver.com/addons/@zestia/ember-auto-focus"><img src="https://emberobserver.com/badges/-zestia-ember-auto-focus.svg"></a>
+<p>
+  <a href="http://travis-ci.org/zestia/ember-auto-focus">
+    <img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=master">
+  </a>
+
+  <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed">
+    <img src="https://david-dm.org/zestia/ember-auto-focus.svg">
+  </a>
+
+  <a href="https://david-dm.org/zestia/ember-auto-focus#dev-badge-embed">
+    <img src="https://david-dm.org/zestia/ember-auto-focus/dev-status.svg">
+  </a>
+
+  <a href="https://emberobserver.com/addons/@zestia/ember-auto-focus">
+    <img src="https://emberobserver.com/badges/-zestia-ember-auto-focus.svg">
+  </a>
+
+  <img src="https://img.shields.io/badge/Ember-%3E%3D%203.11-brightgreen">
+</p>
 
 HTML's `autofocus` attribute focuses an element on the first occurence of the attribute. But, does nothing on subsquent renders of the same element.
 
