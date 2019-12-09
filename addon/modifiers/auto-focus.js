@@ -1,7 +1,7 @@
 import Modifier from 'ember-modifier';
 import focus from '../utils/focus';
 
-export default class OnModifier extends Modifier {
+export default class AutoFocusModifier extends Modifier {
   didInstall() {
     const { disabled } = this.args.named;
 
