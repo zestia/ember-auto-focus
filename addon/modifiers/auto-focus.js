@@ -1,5 +1,6 @@
 import Modifier from 'ember-modifier';
 import focus from '../utils/focus';
+import { scheduleOnce } from '@ember/runloop';
 
 export default class AutoFocusModifier extends Modifier {
   didInstall() {
@@ -18,7 +19,7 @@ export default class AutoFocusModifier extends Modifier {
     }
 
     if (el) {
-      focus(el);
+      scheduleOnce('afterRender', this, focus, el);
     }
   }
 }

@@ -1,12 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import {
-  render,
-  settled,
-  waitUntil,
-  getSettledState,
-  find
-} from '@ember/test-helpers';
+import { render, settled, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('auto-focus', function(hooks) {
@@ -69,7 +63,7 @@ module('auto-focus', function(hooks) {
       .isNotFocused('the selector is scoped to child elements only');
   });
 
-  test('disabled argument', async function(assert) {
+  test('disabled argument (disabled)', async function(assert) {
     assert.expect(1);
 
     await render(hbs`
@@ -79,7 +73,7 @@ module('auto-focus', function(hooks) {
     assert.dom('.foo').isNotFocused('does not focus the element');
   });
 
-  test('enabled argument', async function(assert) {
+  test('disabled argument (enabled)', async function(assert) {
     assert.expect(1);
 
     await render(hbs`
@@ -89,24 +83,39 @@ module('auto-focus', function(hooks) {
     assert.dom('.foo').isFocused('focus the element');
   });
 
+  test('rendering', async function(assert) {
+    assert.expect(2);
+
+    this.focusInOuter = () => assert.step('focusin on parent node');
+
+    await render(hbs`
+      <div {{on "focusin" this.focusInOuter}} tabindex="-1">
+        <input {{auto-focus}} class="foo">
+      </div>
+    `);
+
+    assert.verifySteps(['focusin on parent node']);
+  });
+
   test('programatic focus', async function(assert) {
     assert.expect(2);
 
-    render(hbs`
-      <div class="foo" tabindex="0" {{auto-focus}}>/</div>
-    `); // Intentionally no await
+    this.focused = e => {
+      assert.strictEqual(
+        find('.foo').dataset.programaticallyFocused,
+        'true',
+        'property is true because this addon focused the element'
+      );
+    };
 
-    await waitUntil(() => {
-      const state = getSettledState();
-
-      return state.hasPendingTimers === true && state.hasRunLoop === false;
-    });
-
-    assert.strictEqual(
-      find('.foo').dataset.programaticallyFocused,
-      'true',
-      'property is true because this addon focused the element'
-    );
+    await render(hbs`
+      <div
+        {{on "focus" this.focused}}
+        {{auto-focus}}
+        class="foo"
+        tabindex="0"
+      ></div>
+    `);
 
     await settled();
 

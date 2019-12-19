@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.0.2
+
+- Wait until afterRender before focusing
+  (Fixes focusin not firing on parent node)
+
 ## 4.0.1
 
 - Rename export
