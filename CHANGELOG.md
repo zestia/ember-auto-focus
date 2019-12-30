@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.3
+
+- Upgrade dependencies
+
 ## 4.0.2
 
 - Wait until afterRender before focusing
