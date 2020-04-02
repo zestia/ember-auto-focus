@@ -3,10 +3,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, settled, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('auto-focus', function(hooks) {
+module('auto-focus', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it focuses the element', async function(assert) {
+  test('it focuses the element', async function (assert) {
     assert.expect(3);
 
     this.set('show', true);
@@ -32,7 +32,7 @@ module('auto-focus', function(hooks) {
       .isFocused('the element is focused on subsequent renders');
   });
 
-  test('it can focus a specific child element', async function(assert) {
+  test('it can focus a specific child element', async function (assert) {
     assert.expect(1);
 
     this.set('selector', '.inner > .foo');
@@ -50,7 +50,7 @@ module('auto-focus', function(hooks) {
       .isFocused('the element specified by the selector is focused');
   });
 
-  test('it does not focus an element outside of itself', async function(assert) {
+  test('it does not focus an element outside of itself', async function (assert) {
     assert.expect(1);
 
     await render(hbs`
@@ -63,7 +63,7 @@ module('auto-focus', function(hooks) {
       .isNotFocused('the selector is scoped to child elements only');
   });
 
-  test('disabled argument (disabled)', async function(assert) {
+  test('disabled argument (disabled)', async function (assert) {
     assert.expect(1);
 
     await render(hbs`
@@ -73,7 +73,7 @@ module('auto-focus', function(hooks) {
     assert.dom('.foo').isNotFocused('does not focus the element');
   });
 
-  test('disabled argument (enabled)', async function(assert) {
+  test('disabled argument (enabled)', async function (assert) {
     assert.expect(1);
 
     await render(hbs`
@@ -83,7 +83,7 @@ module('auto-focus', function(hooks) {
     assert.dom('.foo').isFocused('focus the element');
   });
 
-  test('rendering', async function(assert) {
+  test('rendering', async function (assert) {
     assert.expect(2);
 
     this.focusInOuter = () => assert.step('focusin on parent node');
@@ -97,10 +97,10 @@ module('auto-focus', function(hooks) {
     assert.verifySteps(['focusin on parent node']);
   });
 
-  test('programatic focus', async function(assert) {
+  test('programatic focus', async function (assert) {
     assert.expect(2);
 
-    this.focused = e => {
+    this.focused = (e) => {
       assert.strictEqual(
         find('.foo').dataset.programaticallyFocused,
         'true',
