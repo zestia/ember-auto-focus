@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.5
+
+- Upgrade dependencies
+
 ## 4.0.4
 
 - Upgrade dependencies
