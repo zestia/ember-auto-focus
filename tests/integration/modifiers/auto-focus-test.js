@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, settled, find } from '@ember/test-helpers';
+import { render, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('auto-focus', function (hooks) {
@@ -116,8 +116,6 @@ module('auto-focus', function (hooks) {
         tabindex="0"
       ></div>
     `);
-
-    await settled();
 
     assert.strictEqual(
       find('.foo').dataset.programaticallyFocused,
