@@ -4,6 +4,11 @@
 }
 
 /* stylelint-disable-next-line */
+a {
+  display: inline-block;
+}
+
+/* stylelint-disable-next-line */
 a.active {
   font-weight: bold;
 }
