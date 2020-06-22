@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.1.0
+
+- Correct typo with `programmaticallyFocused`
+
 ## 4.0.6
 
 - Upgrade dependencies
@@ -60,7 +64,7 @@
 
 ## 3.0.4
 
-- Introduce a way to distinguish between user focus and programatic focus
+- Introduce a way to distinguish between user focus and programmatic focus
 
 ## 3.0.3
 

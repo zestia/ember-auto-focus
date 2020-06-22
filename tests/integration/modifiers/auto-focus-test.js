@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('auto-focus', function (hooks) {
@@ -97,15 +97,17 @@ module('auto-focus', function (hooks) {
     assert.verifySteps(['focusin on parent node']);
   });
 
-  test('programatic focus', async function (assert) {
+  test('programmatic focus', async function (assert) {
     assert.expect(2);
 
     this.focused = (e) => {
-      assert.strictEqual(
-        find('.foo').dataset.programaticallyFocused,
-        'true',
-        'property is true because this addon focused the element'
-      );
+      assert
+        .dom('.foo')
+        .hasAttribute(
+          'data-programmatically-focused',
+          'true',
+          'property is true because this addon focused the element'
+        );
     };
 
     await render(hbs`
@@ -117,10 +119,11 @@ module('auto-focus', function (hooks) {
       ></div>
     `);
 
-    assert.strictEqual(
-      find('.foo').dataset.programaticallyFocused,
-      undefined,
-      'property removed after focus'
-    );
+    assert
+      .dom('.foo')
+      .doesNotHaveAttribute(
+        'data-programmatically-focused',
+        'property removed after focus'
+      );
   });
 });

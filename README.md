@@ -58,8 +58,8 @@ You can set disabled to true to prevent autofocusing:
 </div>
 ```
 
-## Differentiating between user focus and programatic focus
+## Differentiating between user focus and programmatic focus
 
 Sometimes it's useful to know whether the element that received focus, did so via a user interacting with it, or by _your code_.
 
-This addon sets a temporary data attribute on the element being focused. `element.dataset.programaticallyFocused` which will be true if focused by this addon, and false if focused by the user using your app.
+This addon sets a temporary data attribute on the element being focused. `element.dataset.programmatically-focused` which will be true if focused by this addon, and false if focused by the user using your app.
