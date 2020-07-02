@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.1.1
+
+- Upgrade dependencies
+
 ## 4.1.0
 
 - Correct typo with `programmaticallyFocused`
