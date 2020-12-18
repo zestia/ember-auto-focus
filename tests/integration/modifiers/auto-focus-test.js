@@ -9,7 +9,7 @@ module('auto-focus', function (hooks) {
   test('it focuses the element', async function (assert) {
     assert.expect(3);
 
-    this.set('show', true);
+    this.show = true;
 
     await render(hbs`
       {{#if this.show}}
@@ -35,7 +35,7 @@ module('auto-focus', function (hooks) {
   test('it can focus a specific child element', async function (assert) {
     assert.expect(1);
 
-    this.set('selector', '.inner > .foo');
+    this.selector = '.inner > .foo';
 
     await render(hbs`
       <div class="outer" {{auto-focus this.selector}}>

@@ -1,7 +1,10 @@
 import Route from '@ember/routing/route';
+import { inject } from '@ember/service';
 
-export default Route.extend({
+export default class IndexRoute extends Route {
+  @inject router;
+
   redirect() {
-    return this.transitionTo('modifier');
+    return this.router.transitionTo('modifier');
   }
-});
+}
