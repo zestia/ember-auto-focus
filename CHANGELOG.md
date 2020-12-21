@@ -1,11 +1,8 @@
 # Changelog
 
-## 4.1.7
-
-- Upgrade dependencies
-
 ## 4.1.6
 
+- Upgrade dependencies
 - Run ember-cli-update
 
 ## 4.1.5
