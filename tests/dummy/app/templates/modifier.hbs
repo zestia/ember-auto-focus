@@ -1,10 +1,11 @@
 {{#if this.shouldShowInput}}
   <p>
-    <input {{auto-focus}} />
+    <input aria-label="Example text input" {{auto-focus}} />
   </p>
 {{/if}}
 
 <code>
+  {{! template-lint-disable no-unbalanced-curlies }}
   &lt;input\{{auto-focus}}&gt;
 </code>
 
