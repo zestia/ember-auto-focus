@@ -2,8 +2,8 @@
 
 ## 4.2.0
 
-- Add Embroider support
 - Upgrade dependencies
+- Add Embroider support
 
 ## 4.1.7
 
