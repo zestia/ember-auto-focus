@@ -5,6 +5,7 @@ const { embroiderSafe, embroiderOptimized } = require('@embroider/test-setup');
 
 module.exports = async function () {
   return {
+    npmOptions: ['--legacy-peer-deps'], // Remove me after https://github.com/ember-template-lint/eslint-plugin-hbs/issues/43
     scenarios: [
       {
         name: 'ember-lts-3.16',
