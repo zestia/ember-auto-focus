@@ -82,7 +82,8 @@
     "edition": "octane"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://zestia.github.io/ember-auto-focus"
   },
   "bugs": {
     "url": "https://github.com/zestia/ember-auto-focus/issues"
