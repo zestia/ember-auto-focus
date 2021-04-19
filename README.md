@@ -2,7 +2,7 @@
 
 <p>
   <a href="http://travis-ci.org/zestia/ember-auto-focus">
-    <img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=master">
+    <img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=main">
   </a>
 
   <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed">
