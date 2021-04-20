@@ -1,9 +1,11 @@
 # @zestia/ember-auto-focus
 
 <p>
-  <a href="http://travis-ci.org/zestia/ember-auto-focus">
-    <img src="https://travis-ci.org/zestia/ember-auto-focus.svg?branch=main">
+  <!--
+  <a href="https://github.com/zestia/ember-auto-focus/actions/workflows/ci.yml">
+    <img src="https://github.com/zestia/ember-auto-focus/actions/workflows/ci.yml/badge.svg">
   </a>
+  -->
 
   <a href="https://david-dm.org/zestia/ember-auto-focus#badge-embed">
     <img src="https://david-dm.org/zestia/ember-auto-focus.svg">
@@ -20,7 +22,7 @@
   <img src="https://img.shields.io/badge/Ember-%3E%3D%203.12-brightgreen">
 </p>
 
-HTML's `autofocus` attribute focuses an element on the first occurence of the attribute. But, does nothing on subsquent renders of the same element.
+HTML's `autofocus` attribute focuses an element on the first occurrence of the attribute. But, does nothing on subsequent renders of the same element.
 
 This addon provides an element modifier, which auto focuses the element when it is inserted into the DOM.
 
