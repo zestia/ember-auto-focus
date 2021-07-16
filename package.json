@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
-    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel 'lint:!(fix)'",
+    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:css": "stylelint '**/*.{css,scss}'",
     "lint:css:fix": "stylelint '**/*.{css,scss}' --fix",
@@ -44,7 +44,7 @@
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.0.1",
-    "ember-cli": "^3.26.1",
+    "ember-cli": "^3.27.0",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-github-pages": "^0.2.2",
     "ember-cli-inject-live-reload": "^2.0.2",
