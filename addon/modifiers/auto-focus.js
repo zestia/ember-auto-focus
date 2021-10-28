@@ -10,16 +10,26 @@ export default class AutoFocusModifier extends Modifier {
       return;
     }
 
-    let el = this.element;
+    let { element } = this;
 
     const selector = this.args.positional[0];
 
     if (selector) {
-      el = el.querySelector(selector);
+      element = element.querySelector(selector);
     }
 
-    if (el) {
-      scheduleOnce('afterRender', this, focus, el);
+    if (!element) {
+      return;
     }
+
+    scheduleOnce('afterRender', this, afterRender, element);
   }
+}
+
+function afterRender(element) {
+  if (element.contains(document.activeElement)) {
+    return;
+  }
+
+  focus(element);
 }

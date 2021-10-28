@@ -89,12 +89,28 @@ module('auto-focus', function (hooks) {
     this.focusInOuter = () => assert.step('focusin on parent node');
 
     await render(hbs`
-      <div {{on "focusin" this.focusInOuter}} tabindex="-1">
+      <div {{on "focusin" this.focusInOuter}}>
         <input {{auto-focus}} class="foo">
       </div>
     `);
 
     assert.verifySteps(['focusin on parent node']);
+  });
+
+  test('nesting', async function (assert) {
+    assert.expect(1);
+
+    await render(hbs`
+      <div {{auto-focus}} tabindex="0" class="outer">
+        <div {{auto-focus}} tabindex="0" class="inner">
+        </div>
+      </div>
+    `);
+
+    assert.dom('.inner').isFocused(
+      `child modifiers run before parents, but this scenario behaves as expected
+      (because the parent renders first, then the child)`
+    );
   });
 
   test('programmatic focus', async function (assert) {
