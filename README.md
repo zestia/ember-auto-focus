@@ -40,25 +40,33 @@ https://zestia.github.io/ember-auto-focus/
 
 ```handlebars
 {{#if this.showField}}
-  <input {{auto-focus}}>
+  <input {{auto-focus}} />
 {{/if}}
 ```
 
 Alternatively, you can pass in a selector:
 
 ```handlebars
-<div {{auto-focus ".my-child"}}>
-  <div class="my-child" tabindex="0"></div>
+<div {{auto-focus '.my-child'}}>
+  <div class='my-child' tabindex='0'></div>
 </div>
 ```
 
 You can set disabled to true to prevent autofocusing:
 
 ```handlebars
-<div {{auto-focus disabled=this.shouldAutoFocus}} tabindex="0">
-   ...
+<div {{auto-focus disabled=this.shouldAutoFocus}} tabindex='0'>
+  ...
 </div>
 ```
+
+## Notes
+
+This modifier has certain benefits over other implementations:
+
+1. The modifier waits until after render, so that in your actions you can be sure `document.activeElement` is as you'd expect ([Example](https://github.com/zestia/ember-auto-focus/blob/845ea30035aa55fb69164e9eb9001c6fe08fa73b/tests/integration/modifiers/auto-focus-test.js#L86-L98)).
+
+2. The modifier compensates for the fact that child modifiers run their installation before parents in the DOM tree, so nesting `{{auto-focus}}` would not work as you might expect. ([Example](https://github.com/zestia/ember-auto-focus/blob/845ea30035aa55fb69164e9eb9001c6fe08fa73b/tests/integration/modifiers/auto-focus-test.js#L100-L114)).
 
 ## Differentiating between user focus and programmatic focus
 

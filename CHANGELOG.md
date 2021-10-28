@@ -1,9 +1,10 @@
 # Changelog
 
-## 4.2.0 (not yet published)
+## 4.2.0
 
 - Upgrade dependencies
 - Add Embroider support
+- Allow nesting of auto-focus modifier
 
 ## 4.1.7
 
