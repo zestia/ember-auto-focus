@@ -47,8 +47,8 @@ https://zestia.github.io/ember-auto-focus/
 Alternatively, you can pass in a selector:
 
 ```handlebars
-<div {{auto-focus '.my-child'}}>
-  <div class='my-child' tabindex='0'></div>
+<div {{auto-focus ".my-child"}}>
+  <div class='my-child' tabindex="0"></div>
 </div>
 ```
 
