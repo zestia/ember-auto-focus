@@ -66,6 +66,6 @@ This modifier has certain benefits over other implementations:
 
 1. It waits until after render, so that in your actions you can be sure `document.activeElement` is as you'd expect ([Example](https://github.com/zestia/ember-auto-focus/blob/845ea30035aa55fb69164e9eb9001c6fe08fa73b/tests/integration/modifiers/auto-focus-test.js#L86-L98)).
 
-2. It compensates for the fact that child modifiers run their installation before parents in the DOM tree, so nesting `{{auto-focus}}` would not work as you might expect. ([Example](https://github.com/zestia/ember-auto-focus/blob/845ea30035aa55fb69164e9eb9001c6fe08fa73b/tests/integration/modifiers/auto-focus-test.js#L100-L114)).
+2. It compensates for the fact that child modifiers run their installation before parents in the DOM tree. So nesting `{{auto-focus}}` will work as you would expect. ([Example](https://github.com/zestia/ember-auto-focus/blob/845ea30035aa55fb69164e9eb9001c6fe08fa73b/tests/integration/modifiers/auto-focus-test.js#L100-L114)).
 
 3. It allows you to differentiate between an element that was focused by a user interacting with it, and an element that was focused programmatically. Through `element.dataset.programmaticallyFocused`. ([Example](https://github.com/zestia/ember-auto-focus/blob/8ba15763e5b21e5cc7924339dd65521c965ce722/tests/integration/modifiers/auto-focus-test.js#L116-L144))
