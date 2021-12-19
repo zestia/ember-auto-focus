@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.0
+
+- Ember Auto Import 2x
+
 ## 4.2.0
 
 - Upgrade dependencies
