@@ -1,16 +1,14 @@
 import Controller from '@ember/controller';
-import { set, action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class NativeController extends Controller {
-  shouldShowInput = false;
+  @tracked shouldShowInput = false;
 
-  @action
-  showInput() {
-    set(this, 'shouldShowInput', true);
-  }
+  showInput = () => {
+    this.shouldShowInput = true;
+  };
 
-  @action
-  hideInput() {
-    set(this, 'shouldShowInput', false);
-  }
+  hideInput = () => {
+    this.shouldShowInput = false;
+  };
 }
