@@ -18,7 +18,7 @@ export default class AutoFocusModifier extends Modifier {
       return;
     }
 
-    const selector = positional[0];
+    const [selector] = positional;
 
     if (selector) {
       element = element.querySelector(selector);
