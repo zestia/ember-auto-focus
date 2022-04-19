@@ -3,16 +3,22 @@ import focus from '../utils/focus';
 import { scheduleOnce } from '@ember/runloop';
 
 export default class AutoFocusModifier extends Modifier {
-  didInstall() {
-    const { disabled } = this.args.named;
+  didSetup = false;
+
+  modify(element, positional, named) {
+    if (this.didSetup) {
+      return;
+    }
+
+    this.didSetup = true;
+
+    const { disabled } = named;
 
     if (disabled) {
       return;
     }
 
-    let { element } = this;
-
-    const selector = this.args.positional[0];
+    const selector = positional[0];
 
     if (selector) {
       element = element.querySelector(selector);
