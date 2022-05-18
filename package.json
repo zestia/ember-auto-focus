@@ -1,6 +1,6 @@
 {
   "name": "@zestia/ember-auto-focus",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "description": "An HTML autofocus solution for Ember apps",
   "directories": {
     "doc": "doc",
