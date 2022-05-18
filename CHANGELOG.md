@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.4.0
+
+- Upgrade dependencies
+
+## 4.3.0
+
+- Resolve ember-modifier deprecations
+
 ## 4.2.0
 
 - Upgrade dependencies
