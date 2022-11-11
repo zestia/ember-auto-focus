@@ -1,8 +1,9 @@
 # @zestia/ember-auto-focus
 
 [![Latest npm release][npm-badge]][npm-badge-url]
-[![GitHub Actions][github-actions-badge]][github-actions-url]
 [![Ember Observer][ember-observer-badge]][ember-observer-url]
+
+<!-- [![GitHub Actions][github-actions-badge]][github-actions-url] -->
 
 [npm-badge]: https://img.shields.io/npm/v/@zestia/ember-auto-focus.svg
 [npm-badge-url]: https://www.npmjs.com/package/@zestia/ember-auto-focus
@@ -23,7 +24,7 @@ ember install @zestia/ember-auto-focus
 
 ## Demo
 
-https://zestia.github.io/ember-auto-focus/
+https://zestia.github.io/ember-auto-focus
 
 ## Example
 
@@ -36,15 +37,15 @@ https://zestia.github.io/ember-auto-focus/
 Alternatively, you can pass in a selector:
 
 ```handlebars
-<div {{auto-focus ".my-child"}}>
-  <div class="my-child" tabindex="0"></div>
+<div {{auto-focus '.my-child'}}>
+  <div class='my-child' tabindex='0'></div>
 </div>
 ```
 
 You can set disabled to true to prevent autofocusing:
 
 ```handlebars
-<div {{auto-focus disabled=this.shouldAutoFocus}} tabindex="0">
+<div {{auto-focus disabled=this.shouldAutoFocus}} tabindex='0'>
   ...
 </div>
 ```
