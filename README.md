@@ -34,21 +34,26 @@ https://zestia.github.io/ember-auto-focus
 {{/if}}
 ```
 
-Alternatively, you can pass in a selector:
+## `{{auto-focus}}`
+
+### Arguments
+
+#### `selector`
+
+Optional. This positional argument allows you to auto focus a child element. Useful for occasions when you don't have access to the children.
+
+<details>
+  <summary>Example</summary>
 
 ```handlebars
-<div {{auto-focus '.my-child'}}>
-  <div class='my-child' tabindex='0'></div>
-</div>
+<ExampleComponent {{auto-focus '.some-child'}} />
 ```
 
-You can set disabled to true to prevent autofocusing:
+</details>
 
-```handlebars
-<div {{auto-focus disabled=this.shouldAutoFocus}} tabindex='0'>
-  ...
-</div>
-```
+#### `disabled`
+
+Optional. Turns off auto focusing. This same behaviour can now also be achieved with a conditional modifier.
 
 ## Notes
 
