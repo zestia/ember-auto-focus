@@ -40,7 +40,7 @@ https://zestia.github.io/ember-auto-focus
 
 #### `selector`
 
-Optional. This positional argument allows you to auto focus a child element. Useful for occasions when you don't have access to the children.
+Optional. This _positional_ argument allows you to auto focus a child element. Useful for occasions when you don't have access to the children.
 
 <details>
   <summary>Example</summary>
@@ -53,7 +53,7 @@ Optional. This positional argument allows you to auto focus a child element. Use
 
 #### `disabled`
 
-Optional. Turns off auto focusing. This same behaviour can now also be achieved with a conditional modifier.
+Optional. This _named_ argument turns off auto focusing. Note that this behaviour can now also be achieved with a conditional modifier (this wasn't always the case).
 
 ## Notes
 
