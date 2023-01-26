@@ -90,7 +90,7 @@ module('auto-focus', function (hooks) {
 
     await render(hbs`
       <div {{on "focusin" this.focusInOuter}}>
-        <input {{auto-focus}} class="foo">
+        <input {{auto-focus}} class="foo" aria-label="Example">
       </div>
     `);
 
