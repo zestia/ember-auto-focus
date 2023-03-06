@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.5.1
+
+- Fix accidental release of a major version change of `ember-modifier`
+
 ## 4.5.0
 
 - Upgrade dependencies
