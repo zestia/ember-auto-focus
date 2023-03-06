@@ -1,5 +1,5 @@
 import Modifier from 'ember-modifier';
-import focus from '../utils/focus';
+import focus from '@zestia/ember-auto-focus/utils/focus';
 import { scheduleOnce } from '@ember/runloop';
 
 export default class AutoFocusModifier extends Modifier {
