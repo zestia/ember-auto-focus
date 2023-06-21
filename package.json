@@ -29,6 +29,11 @@
     "plugins": {
       "@release-it-plugins/workspaces": true
     },
-    "npm": false
+    "npm": false,
+    "hooks": {
+      "before:init": [
+        "npm test"
+      ]
+    }
   }
 }
