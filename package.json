@@ -17,9 +17,18 @@
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "npm start --workspace @zestia/ember-auto-focus",
     "start:test-app": "npm start --workspace test-app",
-    "test": "npm run test --workspaces --if-present"
+    "test": "npm run test --workspaces --if-present",
+    "release": "release-it"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "@release-it-plugins/workspaces": "^3.2.0",
+    "release-it": "^15.5.0"
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it-plugins/workspaces": true
+    },
+    "npm": false
   }
 }
