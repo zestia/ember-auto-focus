@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.1.0
+
+- Run `ember-cli-update`
+
 ## 5.0.0
 
 - Update `ember-modifier` to v4
