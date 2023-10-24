@@ -22,6 +22,13 @@ This addon provides an element modifier, which auto focuses the element when it 
 ember install @zestia/ember-auto-focus
 ```
 
+Add the following to `~/.npmrc` to pull @zestia scoped packages from Github instead of NPM.
+
+```
+@zestia:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=<YOUR_GH_TOKEN>
+```
+
 ## Demo
 
 https://zestia.github.io/ember-auto-focus
