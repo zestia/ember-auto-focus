@@ -1,31 +1,41 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
-import hbs from 'htmlbars-inline-precompile';
+import { render, rerender } from '@ember/test-helpers';
+import autoFocus from '@zestia/ember-auto-focus/modifiers/auto-focus';
+import { tracked } from '@glimmer/tracking';
+import { on } from '@ember/modifier';
 
-module('auto-focus', function (hooks) {
+module('autoFocus', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it focuses the element', async function (assert) {
     assert.expect(3);
 
-    this.show = true;
+    const state = new (class {
+      @tracked show = true;
+    })();
 
-    await render(hbs`
-      {{#if this.show}}
-        <div class="foo" tabindex="0" {{auto-focus}}></div>
+    state.show = true;
+
+    await render(<template>
+      {{#if state.show}}
+        <div class="foo" tabindex="0" {{autoFocus}}></div>
       {{/if}}
-    `);
+    </template>);
 
     assert.dom('.foo').isFocused('the element is focused on initial render');
 
-    this.set('show', false);
+    state.show = false;
+
+    await rerender();
 
     assert
       .dom('.foo')
       .doesNotExist('precondition, element is removed from the DOM');
 
-    this.set('show', true);
+    state.show = true;
+
+    await rerender();
 
     assert
       .dom('.foo')
@@ -35,28 +45,28 @@ module('auto-focus', function (hooks) {
   test('it can focus a specific child element', async function (assert) {
     assert.expect(1);
 
-    this.selector = '.inner > .foo';
+    const selector = '.inner > .foo';
 
-    await render(hbs`
-      <div class="outer" {{auto-focus this.selector}}>
+    await render(<template>
+      <div class="outer" {{autoFocus selector}}>
         <div class="inner">
           <div class="foo" tabindex="0"></div>
         </div>
       </div>
-    `);
+    </template>);
 
     assert
-      .dom(this.selector)
+      .dom(selector)
       .isFocused('the element specified by the selector is focused');
   });
 
   test('it does not focus an element outside of itself', async function (assert) {
     assert.expect(1);
 
-    await render(hbs`
+    await render(<template>
       <div class="focusable" tabindex="0"></div>
-      <div {{auto-focus ".focusable"}}></div>
-    `);
+      <div {{autoFocus ".focusable"}}></div>
+    </template>);
 
     assert
       .dom('.focusable')
@@ -66,9 +76,9 @@ module('auto-focus', function (hooks) {
   test('disabled argument (disabled)', async function (assert) {
     assert.expect(1);
 
-    await render(hbs`
-      <div class="foo" tabindex="0" {{auto-focus disabled=true}}>/</div>
-    `);
+    await render(<template>
+      <div class="foo" tabindex="0" {{autoFocus disabled=true}}>/</div>
+    </template>);
 
     assert.dom('.foo').isNotFocused('does not focus the element');
   });
@@ -76,9 +86,9 @@ module('auto-focus', function (hooks) {
   test('disabled argument (enabled)', async function (assert) {
     assert.expect(1);
 
-    await render(hbs`
-      <div class="foo" tabindex="0" {{auto-focus disabled=false}}>/</div>
-    `);
+    await render(<template>
+      <div class="foo" tabindex="0" {{autoFocus disabled=false}}>/</div>
+    </template>);
 
     assert.dom('.foo').isFocused('focus the element');
   });
@@ -86,13 +96,13 @@ module('auto-focus', function (hooks) {
   test('rendering', async function (assert) {
     assert.expect(2);
 
-    this.focusInOuter = () => assert.step('focusin on parent node');
+    const focusInOuter = () => assert.step('focusin on parent node');
 
-    await render(hbs`
-      <div {{on "focusin" this.focusInOuter}}>
-        <input {{auto-focus}} class="foo" aria-label="Example">
+    await render(<template>
+      <div {{on "focusin" focusInOuter}}>
+        <input {{autoFocus}} class="foo" aria-label="Example" />
       </div>
-    `);
+    </template>);
 
     assert.verifySteps(['focusin on parent node']);
   });
@@ -100,12 +110,12 @@ module('auto-focus', function (hooks) {
   test('nesting', async function (assert) {
     assert.expect(1);
 
-    await render(hbs`
-      <div {{auto-focus}} tabindex="0" class="outer">
-        <div {{auto-focus}} tabindex="0" class="inner">
+    await render(<template>
+      <div {{autoFocus}} tabindex="0" class="outer">
+        <div {{autoFocus}} tabindex="0" class="inner">
         </div>
       </div>
-    `);
+    </template>);
 
     assert.dom('.inner').isFocused(
       `child modifiers run before parents, but this scenario behaves as expected
@@ -116,7 +126,7 @@ module('auto-focus', function (hooks) {
   test('programmatic focus', async function (assert) {
     assert.expect(2);
 
-    this.focused = (e) => {
+    const focused = (e) => {
       assert
         .dom('.foo')
         .hasAttribute(
@@ -126,14 +136,9 @@ module('auto-focus', function (hooks) {
         );
     };
 
-    await render(hbs`
-      <div
-        {{on "focus" this.focused}}
-        {{auto-focus}}
-        class="foo"
-        tabindex="0"
-      ></div>
-    `);
+    await render(<template>
+      <div {{on "focus" focused}} {{autoFocus}} class="foo" tabindex="0"></div>
+    </template>);
 
     assert
       .dom('.foo')
