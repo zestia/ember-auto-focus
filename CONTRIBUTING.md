@@ -3,7 +3,7 @@
 ## Installation
 
 - `git clone <repository-url>`
-- `cd @zestia/ember-auto-focus`
+- `cd ember-auto-focus`
 - `npm install`
 
 ## Linting
