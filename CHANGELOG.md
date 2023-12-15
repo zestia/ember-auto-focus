@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.1.3
+
+- Upgrade dependencies
+- Convert tests to `.gjs`
+
 ## 5.1.2
 
 - Update `@zestia` scoped packages
