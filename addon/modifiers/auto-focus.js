@@ -28,14 +28,14 @@ export default class AutoFocusModifier extends Modifier {
       return;
     }
 
-    scheduleOnce('afterRender', this, afterRender, element);
+    scheduleOnce('afterRender', this, afterRender, element, named);
   }
 }
 
-function afterRender(element) {
+function afterRender(element, options) {
   if (element.contains(document.activeElement)) {
     return;
   }
 
-  focus(element);
+  focus(element, options);
 }

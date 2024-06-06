@@ -61,6 +61,10 @@ Optional. This _positional_ argument allows you to auto focus a child element. U
 
 Optional. This _named_ argument turns off auto focusing. Note that this behaviour can now also be achieved with a conditional modifier (this wasn't always the case).
 
+#### `options`
+
+Optional. _Any other named arguments_ are passed to the `focus` method. Some options available include `preventScroll` and `focusVisible`
+
 ## Notes
 
 This modifier has certain benefits over other implementations:

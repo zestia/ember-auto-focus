@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.2.0
+
+- Pass options through to `.focus()`
+
 ## 5.1.3
 
 - Upgrade dependencies
