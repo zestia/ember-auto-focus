@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'dummy/tests/helpers';
-import { render, rerender } from '@ember/test-helpers';
+import { render, find, rerender } from '@ember/test-helpers';
 import autoFocus from '@zestia/ember-auto-focus/modifiers/auto-focus';
 import { tracked } from '@glimmer/tracking';
 import { on } from '@ember/modifier';
@@ -146,5 +146,29 @@ module('autoFocus', function (hooks) {
         'data-programmatically-focused',
         'property removed after focus'
       );
+  });
+
+  test('other options', async function (assert) {
+    assert.expect(1);
+
+    await render(<template>
+      {{! template-lint-disable no-forbidden-elements}}
+      {{! prettier-ignore }}
+      <style>
+        .parent {
+          height: 100px;
+          overflow-y: scroll;
+        }
+
+        input {
+          margin-top: 100px
+        }
+      </style>
+      <div class="parent">
+        <button type="button" {{autoFocus preventScroll=true}} />
+      </div>
+    </template>);
+
+    assert.strictEqual(find('.parent').scrollTop, 0);
   });
 });
