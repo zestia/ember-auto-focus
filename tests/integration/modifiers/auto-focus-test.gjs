@@ -169,6 +169,10 @@ module('autoFocus', function (hooks) {
       </div>
     </template>);
 
-    assert.strictEqual(find('.parent').scrollTop, 0);
+    assert.strictEqual(
+      find('.parent').scrollTop,
+      0,
+      'can pass extra options to focus method'
+    );
   });
 });
