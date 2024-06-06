@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.2.1
+
+- Correct implementation from 5.2.0
+
 ## 5.2.0
 
 - Pass options through to `.focus()`
