@@ -1,3 +1,5 @@
+/* eslint-disable ember/no-runloop */
+
 import { next } from '@ember/runloop';
 
 export default function focus(element, options) {

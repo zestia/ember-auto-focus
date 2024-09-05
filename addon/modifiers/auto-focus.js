@@ -1,3 +1,5 @@
+/* eslint-disable ember/no-runloop */
+
 import Modifier from 'ember-modifier';
 import focus from '@zestia/ember-auto-focus/utils/focus';
 import { scheduleOnce } from '@ember/runloop';

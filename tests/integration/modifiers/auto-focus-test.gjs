@@ -152,7 +152,7 @@ module('autoFocus', function (hooks) {
     assert.expect(1);
 
     await render(<template>
-      {{! template-lint-disable no-forbidden-elements}}
+      {{! template-lint-disable no-forbidden-elements }}
       {{! prettier-ignore }}
       <style>
         .parent {
