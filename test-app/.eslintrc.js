@@ -18,6 +18,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:ember/recommended',
     'plugin:prettier/recommended',
+    '@zestia/eslint-config',
   ],
   env: {
     browser: true,

@@ -2,6 +2,7 @@
   "author": "",
   "description": "Test app for @zestia/ember-auto-focus addon",
   "devDependencies": {
+    "@zestia/eslint-config": "^7.0.0-1",
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
     "@babel/plugin-proposal-decorators": "^7.24.7",
