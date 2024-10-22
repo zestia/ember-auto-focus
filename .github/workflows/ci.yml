@@ -13,14 +13,13 @@ concurrency:
 
 jobs:
   test:
-    name: 'Tests'
+    name: "Tests"
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
@@ -29,23 +28,23 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Run Tests
-        run: npm run test:ember
+        run: npm run test
 
   floating:
-    name: 'Floating Dependencies'
+    name: "Floating Dependencies"
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
       - name: Install Dependencies
-        run: npm install --no-shrinkwrap
+        run: npm install --no-package-lock
       - name: Run Tests
-        run: npm run test:ember
+        run: npm run test
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
@@ -66,13 +65,13 @@ jobs:
           - embroider-optimized
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests
-        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
+        working-directory: test-app
