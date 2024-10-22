@@ -9,7 +9,6 @@ export default class AutoFocusModifier extends Modifier {
 
   modify(element, positional, named) {
     if (this.didSetup) {
-      alert(1);
       return;
     }
 
