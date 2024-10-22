@@ -21,6 +21,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:ember/recommended',
         'plugin:prettier/recommended',
+        '@zestia/eslint-config',
       ],
       rules: {
         // require relative imports use full extensions
@@ -37,6 +38,7 @@ module.exports = {
         'plugin:ember/recommended',
         'plugin:ember/recommended-gjs',
         'plugin:prettier/recommended',
+        '@zestia/eslint-config',
       ],
       rules: {
         // require relative imports use full extensions
@@ -64,6 +66,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:n/recommended',
         'plugin:prettier/recommended',
+        '@zestia/eslint-config',
       ],
     },
   ],
