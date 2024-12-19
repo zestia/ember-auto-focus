@@ -36,11 +36,11 @@ https://zestia.github.io/ember-auto-focus
 
 ```handlebars
 {{#if this.showField}}
-  <input {{auto-focus}} />
+  <input {{autoFocus}} />
 {{/if}}
 ```
 
-## `{{auto-focus}}`
+## `{{autoFocus}}`
 
 ### Arguments
 
@@ -52,7 +52,7 @@ Optional. This _positional_ argument allows you to auto focus a child element. U
   <summary>Example</summary>
 
 ```handlebars
-<ExampleComponent {{auto-focus '.some-child'}} />
+<ExampleComponent {{autoFocus '.some-child'}} />
 ```
 
 </details>
@@ -71,6 +71,6 @@ This modifier has certain benefits over other implementations:
 
 1. It waits until after render, so that in your actions you can be sure `document.activeElement` is as you'd expect ([Example](https://github.com/zestia/ember-auto-focus/blob/845ea30035aa55fb69164e9eb9001c6fe08fa73b/tests/integration/modifiers/auto-focus-test.js#L86-L98)).
 
-2. It compensates for the fact that child modifiers run their installation before parents in the DOM tree. So nesting `{{auto-focus}}` will work as you would expect. ([Example](https://github.com/zestia/ember-auto-focus/blob/845ea30035aa55fb69164e9eb9001c6fe08fa73b/tests/integration/modifiers/auto-focus-test.js#L100-L114)).
+2. It compensates for the fact that child modifiers run their installation before parents in the DOM tree. So nesting `{{autoFocus}}` will work as you would expect. ([Example](https://github.com/zestia/ember-auto-focus/blob/845ea30035aa55fb69164e9eb9001c6fe08fa73b/tests/integration/modifiers/auto-focus-test.js#L100-L114)).
 
 3. It allows you to differentiate between an element that was focused by a user interacting with it, and an element that was focused programmatically. Through `element.dataset.programmaticallyFocused`. ([Example](https://github.com/zestia/ember-auto-focus/blob/8ba15763e5b21e5cc7924339dd65521c965ce722/tests/integration/modifiers/auto-focus-test.js#L116-L144))
