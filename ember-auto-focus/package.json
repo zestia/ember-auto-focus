@@ -1,6 +1,6 @@
 {
   "name": "ember-auto-focus",
-  "version": "5.2.2",
+  "version": "6.0.0-0",
   "description": "An HTML autofocus solution for Ember apps",
   "keywords": [
     "ember-addon",
