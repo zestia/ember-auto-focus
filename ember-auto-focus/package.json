@@ -1,6 +1,6 @@
 {
   "name": "ember-auto-focus",
-  "version": "6.0.0-1",
+  "version": "6.0.0-2",
   "description": "An HTML autofocus solution for Ember apps",
   "keywords": [
     "ember-addon",
@@ -54,7 +54,7 @@
     "@rollup/plugin-babel": "^6.0.4",
     "babel-plugin-ember-template-compilation": "^2.2.5",
     "concurrently": "^9.0.1",
-    "ember-cli-github-pages": "^0.2.2",
+    "ember-modifier": "^4.2.0",
     "ember-source": "^5.4.0",
     "ember-template-lint": "^6.0.0",
     "eslint-config-prettier": "^9.1.0",
