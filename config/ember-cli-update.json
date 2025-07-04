@@ -3,16 +3,13 @@
   "projectName": "ember-auto-focus",
   "packages": [
     {
-      "name": "@embroider/addon-blueprint",
-      "version": "4.1.1",
+      "name": "@ember/addon-blueprint",
+      "version": "0.8.1",
       "blueprints": [
         {
-          "name": "@embroider/addon-blueprint",
+          "name": "@ember/addon-blueprint",
           "isBaseBlueprint": true,
-          "options": [
-            "--ci-provider=github",
-            "--npm"
-          ]
+          "options": ["--ci-provider=github", "--npm"]
         }
       ]
     }
