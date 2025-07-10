@@ -3,7 +3,7 @@
 ## Installation
 
 - `git clone <repository-url>`
-- `cd ember-auto-focus`
+- `cd ember-async-tooltips`
 - `npm install`
 
 ## Linting

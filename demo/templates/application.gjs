@@ -5,7 +5,7 @@ import '../styles/app.css';
 export default Route(
   <template>
     <h1>
-      @zestia/ember-auto-focus
+      @zestia/ember-async-tooltips
     </h1>
 
     <LinkTo @route="native">Native</LinkTo>
@@ -18,7 +18,7 @@ export default Route(
     {{outlet}}
 
     {{! template-lint-disable no-inline-styles }}
-    <a href="https://github.com/zestia/ember-auto-focus">
+    <a href="https://github.com/zestia/ember-async-tooltips">
       <img
         style="position: absolute; top: 0; right: 0; border: 0;"
         width="149"

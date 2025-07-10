@@ -32,10 +32,12 @@ const config = [
   ember.configs.base,
   ember.configs.gjs,
   zestia,
+
   // Temporary
   {
     rules: {
-      'no-restricted-imports': 'off'
+      'no-restricted-imports': 'off',
+      'ember/template-no-let-reference': 'off'
     }
   },
   /**

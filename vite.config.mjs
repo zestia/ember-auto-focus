@@ -9,7 +9,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '@zestia/ember-auto-focus',
+        find: '@zestia/ember-async-tooltips',
         replacement: `${__dirname}/src`
       }
     ]

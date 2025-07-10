@@ -1,14 +1,13 @@
 {
-  "name": "@zestia/ember-auto-focus",
-  "version": "6.0.1",
-  "description": "An HTML autofocus solution for Ember apps",
+  "name": "@zestia/ember-async-tooltips",
+  "version": "15.2.2",
+  "description": "Render tooltips asynchronously",
   "keywords": [
     "ember-addon",
-    "focus",
-    "autofocus",
-    "input",
-    "textarea",
-    "modifier"
+    "tooltips",
+    "mouseover",
+    "hover",
+    "async"
   ],
   "repository": "",
   "license": "MIT",
@@ -37,8 +36,11 @@
   },
   "dependencies": {
     "ember-modifier": "^4.2.0",
+    "@ember/test-waiters": "^4.1.1",
     "@embroider/addon-shim": "^1.8.9",
-    "decorator-transforms": "^2.2.2"
+    "decorator-transforms": "^2.2.2",
+    "@zestia/animation-utils": "^5.0.5",
+    "@zestia/position-utils": "^7.0.6"
   },
   "devDependencies": {
     "@zestia/eslint-config": "^7.0.2",
