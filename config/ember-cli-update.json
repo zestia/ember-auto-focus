@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectName": "ember-auto-focus",
+  "projectName": "@zestia/ember-auto-focus",
   "packages": [
     {
       "name": "@ember/addon-blueprint",
