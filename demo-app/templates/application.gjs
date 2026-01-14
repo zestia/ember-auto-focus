@@ -1,6 +1,5 @@
 import Route from 'ember-route-template';
 import { LinkTo } from '@ember/routing';
-import '../styles/app.css';
 
 export default Route(
   <template>
