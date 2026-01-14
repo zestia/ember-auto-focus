@@ -10,23 +10,23 @@ export default defineConfig({
     alias: [
       {
         find: '@zestia/ember-auto-focus',
-        replacement: `${__dirname}/src`
-      }
-    ]
+        replacement: `${__dirname}/src`,
+      },
+    ],
   },
   plugins: [
     ...(isCompat ? [classicEmberSupport()] : []),
     ember(),
     babel({
       babelHelpers: 'inline',
-      extensions
-    })
+      extensions,
+    }),
   ],
   build: {
     rollupOptions: {
       input: {
-        tests: 'tests/index.html'
-      }
-    }
-  }
+        tests: 'tests/index.html',
+      },
+    },
+  },
 });
