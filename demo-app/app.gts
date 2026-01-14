@@ -7,6 +7,11 @@ class Router extends EmberRouter {
   rootURL = '/';
 }
 
+Router.map(function () {
+  this.route('native');
+  this.route('modifier');
+});
+
 export class App extends EmberApp {
   /**
    * Any services or anything from the addon that needs to be in the app-tree registry
@@ -31,7 +36,7 @@ export class App extends EmberApp {
      *
      * See: https://rfcs.emberjs.com/id/1132-default-strict-resolver
      */
-    ...import.meta.glob('./templates/**/*', { eager: true })
+    ...import.meta.glob('./templates/**/*', { eager: true }),
   };
 }
 
