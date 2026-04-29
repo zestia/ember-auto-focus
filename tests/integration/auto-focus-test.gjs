@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, find, rerender } from '@ember/test-helpers';
-import autoFocus from '@zestia/ember-auto-focus/modifiers/auto-focus';
+import autoFocus from '#src/modifiers/auto-focus';
 import { tracked } from '@glimmer/tracking';
 import { on } from '@ember/modifier';
 

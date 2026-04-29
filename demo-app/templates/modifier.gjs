@@ -2,7 +2,7 @@ import Route from 'ember-route-template';
 import { on } from '@ember/modifier';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import autoFocus from '@zestia/ember-auto-focus/modifiers/auto-focus';
+import autoFocus from '#src/modifiers/auto-focus';
 
 class ModifierRoute extends Component {
   @tracked shouldShowInput;
