@@ -1,5 +1,9 @@
 # Changelog
 
+## 7.0.0
+
+- The selector is now resolved after rendering settles, so it finds elements that render in a later pass
+
 ## 6.0.1
 
 - Convert to v2 addon using newer blueprint
