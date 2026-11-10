@@ -1,9 +1,10 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find, rerender } from '@ember/test-helpers';
+import { render, find, settled } from '@ember/test-helpers';
 import autoFocus from '#src/modifiers/auto-focus';
 import { tracked } from '@glimmer/tracking';
 import { on } from '@ember/modifier';
+import { modifier } from 'ember-modifier';
 
 module('autoFocus', function (hooks) {
   setupRenderingTest(hooks);
@@ -29,7 +30,7 @@ module('autoFocus', function (hooks) {
 
     state.show = false;
 
-    await rerender();
+    await settled();
 
     assert
       .dom('.foo')
@@ -37,7 +38,7 @@ module('autoFocus', function (hooks) {
 
     state.show = true;
 
-    await rerender();
+    await settled();
 
     assert
       .dom('.foo')
@@ -62,6 +63,29 @@ module('autoFocus', function (hooks) {
     assert
       .dom(selector)
       .isFocused('the element specified by the selector is focused');
+  });
+
+  test('it waits for rendering to settle', async function (assert) {
+    assert.expect(1);
+
+    const state = new (class {
+      @tracked isReady = false;
+    })();
+
+    const ready = modifier(() => (state.isReady = true));
+
+    await render(
+      <template>
+        <div {{autoFocus ".late"}}>
+          <div {{ready}}></div>
+          {{#if state.isReady}}
+            <div class="late" tabindex="0"></div>
+          {{/if}}
+        </div>
+      </template>
+    );
+
+    assert.dom('.late').isFocused();
   });
 
   test('it does not focus an element outside of itself', async function (assert) {

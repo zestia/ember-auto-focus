@@ -1,13 +1,11 @@
-/* eslint-disable ember/no-runloop */
-
 import Modifier from 'ember-modifier';
 import focus from '../utils/focus.js';
-import { scheduleOnce } from '@ember/runloop';
+import { renderSettled } from '@ember/renderer';
 
 export default class AutoFocusModifier extends Modifier {
   didSetup = false;
 
-  modify(element, positional, named) {
+  async modify(element, positional, named) {
     if (this.didSetup) {
       return;
     }
@@ -20,6 +18,8 @@ export default class AutoFocusModifier extends Modifier {
       return;
     }
 
+    await renderSettled();
+
     const [selector] = positional;
 
     if (selector) {
@@ -30,14 +30,10 @@ export default class AutoFocusModifier extends Modifier {
       return;
     }
 
-    scheduleOnce('afterRender', this, afterRender, element, named);
-  }
-}
+    if (element.contains(document.activeElement)) {
+      return;
+    }
 
-function afterRender(element, options) {
-  if (element.contains(document.activeElement)) {
-    return;
+    focus(element, named);
   }
-
-  focus(element, options);
 }
